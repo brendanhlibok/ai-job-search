@@ -17,8 +17,7 @@ documents/
 ├── applications/                # Past job applications
 │   └── <company>_<role>/
 │       ├── job_posting.md       # The original job posting (written by /apply, or pasted)
-│       ├── cover_letter.tex     # The cover letter you submitted
-│       ├── cv_draft.tex         # The CV variant you submitted
+│       ├── outreach_message.md  # Only when the outreach format was a LinkedIn message or email - the cover-letter format lives in a Google Doc instead (URL in job_search_tracker.csv's cover_letter_file column)
 │       └── outcome.md           # Result + notes (fill in after hearing back)
 └── README.md                    # This file
 ```
@@ -129,9 +128,9 @@ applications/
 
 **`job_posting.md`** — The full job posting text, written by `/apply`, or paste it here. Used by `/setup` to infer which skills and role types you have targeted, and to calibrate `04-job-evaluation.md`.
 
-**`cover_letter.tex`** — The cover letter you actually submitted. Used to extract writing style patterns and structure for `06-cover-letter-templates.md`.
+**CV and cover letter (Google Docs, not local files)** — The tailored CV is always a Google Doc; the outreach message is a Google Doc too when its format is a full cover letter. Both are referenced by URL in `job_search_tracker.csv`'s `cv_file` / `cover_letter_file` columns rather than stored here - `/setup` fetches their content from there (writing style patterns and structure for `06-cover-letter-templates.md`, profile statement styles for `05-cv-templates.md`).
 
-**`cv_draft.tex`** — The CV variant you submitted. Used to extract profile statement styles for `05-cv-templates.md`.
+**`outreach_message.md`** — Only written when the outreach format was a LinkedIn message or email (no Google Doc exists for those). Holds the exact drafted text, with a `format:` frontmatter field. Used the same way the old `cover_letter.tex` was, for `06-cover-letter-templates.md`.
 
 **`outcome.md`** — Fill this in after the application resolves. Format:
 

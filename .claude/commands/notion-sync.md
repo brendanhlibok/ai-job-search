@@ -69,12 +69,12 @@ Validate the cheap, local precondition before creating anything external. A run 
    | Ranked | date | `rank_date` from `seen_jobs.json`; omit when not ranked |
    | Applied on | date | tracker `date` column; omit when not in the tracker, and omit when the status is `drafted` |
    | Channel | select | tracker `channel` column (e.g. portal / email / referral); options grow as values appear |
-   | CV file | rich text | tracker `cv_file` column - the filename only, never document content |
-   | Cover letter | rich text | tracker `cover_letter_file` column - the filename only, never document content |
+   | CV file | url | tracker `cv_file` column - a Google Doc URL, synced as a reference only. The Doc itself is never fetched, exported, or embedded. |
+   | Cover letter | rich text | tracker `cover_letter_file` column - either a Google Doc URL (cover-letter format) or a local archive path (LinkedIn message / email format), synced as a reference only. Same rule as CV file: never fetched, exported, or embedded - kept as rich text rather than `url` since the value isn't always a URL. |
    | URL | url | posting URL |
    | Key | rich text | the job's key in `seen_jobs.json` - dedup anchor, never edited by hand |
 
-   The tracker-sourced properties (Applied on, Channel, CV file, Cover letter) stay empty for jobs that have no tracker row. CV file and Cover letter fill in once `/apply` records the draft; Applied on stays empty until `/outcome` records the submission. Only filenames ever sync; document contents stay local.
+   The tracker-sourced properties (Applied on, Channel, CV file, Cover letter) stay empty for jobs that have no tracker row. CV file and Cover letter fill in once `/apply` records the draft; Applied on stays empty until `/outcome` records the submission. Only the tracker's stored reference (a URL or a local path string) ever syncs; document contents stay local, and neither property's value is ever fetched or expanded before syncing.
 
 4. **Existing database with missing properties:** if the located database predates a schema addition (a property from the table above does not exist), add the missing properties to the database before upserting. Never remove or retype existing properties.
 5. Write `job_scraper/notion_sync.json` with the database id and URL. This file is personal state and is gitignored - never commit it.
@@ -135,7 +135,7 @@ Remind the user once (first run only): the repo files remain the source of truth
 3. **Page bodies are write-once.** Property updates keep rows current; bodies belong to the user after creation. Only `--rebuild` may rewrite them, and it says so before doing it.
 4. **Never fabricate.** A dead posting URL gets an explicit "unavailable" note, not a reconstruction. Every page claim traces to stored state or fetched content.
 5. **Job data only.** The candidate profile, behavioral notes, and evaluation framework never sync - this is a pipeline view, not a profile export.
-6. **Documents never leave the machine.** CVs and cover letters sync as **filenames only** - never upload, attach, or embed the documents themselves, nor HTML/text renditions of their content, into the destination. The local repo and `documents/applications/` archive are the only home for application documents; the row's page names them so the user knows what to open locally.
+6. **Document content never syncs.** CVs and cover letters sync as **a reference only** - the tracker's stored value (a Google Doc URL, or a local archive path for a LinkedIn message/email) - never upload, attach, fetch, export, or embed the documents themselves, nor HTML/text renditions of their content, into the destination. The CV Doc, the cover-letter Doc (when that format is used), and the `documents/applications/` archive are the only home for application content; the synced reference just tells the user where to open it - a private Google Doc link only their own account can open, or a local path into this repo.
 
 ---
 

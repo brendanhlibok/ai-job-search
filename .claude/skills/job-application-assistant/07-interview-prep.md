@@ -1,5 +1,5 @@
 ---
-framework_version: 1.0.0
+framework_version: 1.0.1
 ---
 
 # Interview Preparation Guide
@@ -38,6 +38,50 @@ Keep answers to 1-2 minutes. Be specific. End with what you learned or would do 
 **Use for:** "[QUESTION_TYPE_1]", "[QUESTION_TYPE_2]"
 
 <!-- Add more STAR examples as needed. Aim for 4-6 covering different competencies. -->
+
+## STAR Candidates (Complete Manually)
+
+<!-- Added by /setup Path A (CV import) - S/T/A/R fields left blank for you to fill in with the real story. -->
+
+### Haptic Wristband capstone - 1st-Place Student Project Worldwide (ISCAS 2025)
+**Source:** CV - Capstone Design Project, Rice University (Aug 2024 - Jul 2025)
+**What happened:** Designed a haptic bracelet with tactile and squeeze feedback (real-time <10Hz, 0-10N force range) integrated with a Unity/C# VR environment; won 1st place worldwide at ISCAS 2025 and led to a Work-in-Progress publication at World Haptics Conference 2025.
+**Why it matters:** "Tell me about a project you're proud of," technical design/engineering tradeoff questions, working under competition deadlines, hardware-software integration.
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
+### MD Anderson custom surgical end-effector
+**Source:** CV - Robotics Engineering Intern, MD Anderson Cancer Center (May-Aug 2024)
+**What happened:** Fabricated a custom end-effector for a Universal Robots 6 DoF arm compatible with various surgical tools (SolidWorks, 3D printing, CNC machining), and built a TCP/IP + Python pipeline to process and visualize real-time robotic force data for surgical feedback.
+**Why it matters:** Working in a high-stakes/regulated domain, design-for-manufacturing tradeoffs, translating a research prototype into something clinically usable.
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
+### Leading and training the Rugged Robotics operator team
+**Source:** CV - Robotic Operations Engineer, Rugged Robotics (Aug 2025-Present)
+**What happened:** Manages and trains a team of 5 operators on autonomous robot systems, handling onboarding, technical development, and interpersonal conflict resolution to optimize construction-site deployments.
+**Why it matters:** Leadership/management questions, conflict resolution, training and mentoring, operating autonomous systems in the field.
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
+
+### Automated durability test bench (Mechatronics and Haptic Interfaces Lab)
+**Source:** CV - Undergraduate Researcher, Rice University (Jun 2023-May 2025)
+**What happened:** Developed an automated test bench evaluating durability over 100,000 walking cycles at a 105lb load, using a cyclically powered electromagnet and a custom C++ (Arduino) control system.
+**Why it matters:** Test/validation methodology, designing for long-duration reliability, independent research ownership.
+**S/T/A/R stub:**
+- Situation:
+- Task:
+- Action:
+- Result:
 
 ## Common Tough Questions
 

@@ -89,8 +89,8 @@ Enter this branch from the `followup` argument (Step 0) or from the offer under 
 
 **Drafting.** For each selected application:
 
-1. Read the archive folder: the `job_posting.md`, `cv_draft.tex`, and `cover_letter.tex` that Step 3 maintains are the source of **every claim** the note may make - this is Rule 3 (never fabricate) widened to "no new claims": a follow-up that introduces skills or experience the submitted materials don't contain is a fabrication vector.
-2. Apply the writing style rules from `03-writing-style.md` (no cliches, no em-dashes, warm but direct), and match the application's language - draw the register from the archived cover letter.
+1. Read the source materials that Step 3 maintains - the archived `job_posting.md`, the tracker's `cv_file` URL (fetch the Doc content via the Docs MCP connection), and the outreach message (fetch the Doc content if `cover_letter_file` is a URL, or read `outreach_message.md` if it's a local path) - these are the source of **every claim** the note may make. This is Rule 3 (never fabricate) widened to "no new claims": a follow-up that introduces skills or experience the submitted materials don't contain is a fabrication vector.
+2. Apply the writing style rules from `03-writing-style.md` (no cliches, no em-dashes, warm but direct), and match the application's language - draw the register from the archived outreach message.
 3. Write roughly **60 to 120 words**: address the `contact_person` from the tracker if present (otherwise the team, in the application's language); one sentence restating interest in the specific role; one concrete value-reminder drawn from the submitted materials; one polite question about the timeline. No pressure, no "just checking in" filler.
 4. Shape it for the `channel` column: email (with a subject line reusing the application's headline), LinkedIn message (shorter, no subject), or portal message (plain text).
 5. Present the draft and iterate until the user is happy.
@@ -110,7 +110,7 @@ If the user decides not to send, log nothing.
 
 Create or update `documents/applications/<company>_<role>/`. All content here is personal data - the folder is already gitignored (`documents/applications/**`), so nothing needs redacting.
 
-1. **`cv_draft.tex` and `cover_letter.tex`** - copy (never move) the submitted files. Locate them via the tracker row's `cv_file`/`cover_letter_file` columns; if those are empty, look for `cv/main_<company>*.tex` and `cover_letters/cover_<company>_*.tex`. If a file already exists in the archive, leave it - the archived version is what was actually submitted. If no draft files exist (application made outside `/apply`), skip with a note.
+1. **CV and outreach message** - no copy needed for the CV: the tracker's `cv_file` column already holds the tailored Google Doc's permanent URL, created fresh per application and never reused, so it's already a stable record of what was submitted. Same for `cover_letter_file` when it's a URL (cover-letter format). When `cover_letter_file` is a local path instead (LinkedIn message / email format), confirm `documents/applications/<company>_<role>/outreach_message.md` exists - `/apply` Step 6b writes it at draft time, so this is normally already there. If it's missing (application made outside `/apply`, or predates this format), ask the user for the message text and write it now with the same frontmatter format `/apply` uses (`format: linkedin_message` or `format: email`). If the tracker row has no `cv_file`/`cover_letter_file` at all (application made entirely outside `/apply`), skip with a note.
 2. **`job_posting.md`** - if it already exists, leave it. Otherwise try WebFetch on the tracker row's `source` URL and save the posting text, retrying a 403 with browser headers per `.claude/skills/job-application-assistant/09-web-research.md`. If the URL is dead (postings expire fast - this is exactly why the archive matters), ask the user to paste the posting, or write a stub noting the posting is unavailable. **Never reconstruct a posting from memory.**
 3. **`outcome.md`** - write or update it in exactly the format documented in `documents/README.md`, so `/setup` Path A parses it without special cases:
 
@@ -164,7 +164,7 @@ Summarize what was recorded:
 > **Outcome recorded for <Role> at <Company>.**
 >
 > - `documents/applications/<company>_<role>/outcome.md` - status: <status>, <what changed>
-> - Archived: <which of cv_draft.tex / cover_letter.tex / job_posting.md were copied or fetched, and which were skipped and why>
+> - Archived: <whether the CV/cover-letter Doc URLs were already on the tracker row, whether outreach_message.md was confirmed or written, and job_posting.md fetched or left in place - and anything skipped and why>
 > - Tracker: status → <new status>
 >
 > [Calibration suggestion from Step 5, if triggered]

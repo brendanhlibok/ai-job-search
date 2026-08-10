@@ -57,7 +57,8 @@ class ApplyRecordsApplication(unittest.TestCase):
     def test_step_writes_a_drafted_row_with_both_document_paths(self):
         for fragment in (
             "| `status` | `drafted` |",
-            '| `cv_file`, `cover_letter_file` | the two paths listed under "Files Created"',
+            "| `cv_file` | the tailored CV's Google Doc URL |",
+            "| `cover_letter_file` | the cover letter's Google Doc URL",
         ):
             self.assertIn(
                 fragment,

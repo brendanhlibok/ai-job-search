@@ -55,7 +55,7 @@ Present as:
   Full file will be replaced with a blank template.
 
 - 05-cv-templates.md — [has profile statements / already blank]
-  Profile statement templates will be cleared. LaTeX structure and tailoring guidelines are preserved.
+  Profile statement templates will be cleared. Template structure and tailoring guidelines are preserved. The `ACTIVE-GOOGLE-DOC-TEMPLATE` block (base resume Doc URL, "Tailored Resumes" folder) is left as-is - it points at your own Google Drive, not profile data this command manages.
 
 - 07-interview-prep.md — [has STAR examples / already blank]
   STAR examples and any STAR candidate stubs will be cleared. Framework, tough questions, and roleplay guidelines are preserved.

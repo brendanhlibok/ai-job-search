@@ -18,7 +18,7 @@ Then welcome the user with a single message that lists three paths. The wording 
 
 > **Welcome to the AI Job Search setup!**
 >
-> I'll help you build your professional profile so Claude can evaluate job postings, tailor CVs, write cover letters, and prepare you for interviews.
+> I'll help you build your professional profile so Claude can evaluate job postings, tailor CVs, draft outreach messages, and prepare you for interviews.
 >
 > I see files in your `documents/` folder: [list per subfolder, e.g. "2 in cv/, 1 in linkedin/, 3 in references/"]. Three ways to start:
 >
@@ -34,7 +34,7 @@ Then welcome the user with a single message that lists three paths. The wording 
 
 > **Welcome to the AI Job Search setup!**
 >
-> I'll help you build your professional profile so Claude can evaluate job postings, tailor CVs, write cover letters, and prepare you for interviews.
+> I'll help you build your professional profile so Claude can evaluate job postings, tailor CVs, draft outreach messages, and prepare you for interviews.
 >
 > Three ways to start:
 >
@@ -102,8 +102,8 @@ Read each document found in Step A1. Process subfolders in this order: `cv/`, `l
 
 **`applications/<company>_<role>/` subfolders:**
 - `job_posting.md`: role title, company, required skills, experience level, sector, role type
-- `cover_letter.tex`: opening structure, body structure, bullet style, closing, recurring phrases
-- `cv_draft.tex`: profile statement, section ordering, framing for this role type
+- Outreach message structure: fetch the Google Doc content via `job_search_tracker.csv`'s `cover_letter_file` column when it's a URL (cover-letter format), or read `outreach_message.md` in the archive folder when it's a local path (LinkedIn message / email format) - opening structure, body structure, bullet style, closing, recurring phrases
+- CV structure: fetch the Google Doc content via the tracker's `cv_file` column URL - profile statement, section ordering, framing for this role type
 - `outcome.md`: status (in_progress/hired/offer_declined/rejected/no_response/interview_only), interview stages, notes. Skip `in_progress` applications for calibration — they have no final signal yet.
 
 After reading, proceed to Step A4 without intermediate output. The user sees a complete picture in Step A6.
@@ -145,10 +145,10 @@ For each skill file, compare extracted document content against the current file
 **Inference rules** (apply when populating from inferred sources):
 
 - **`02-behavioral-profile.md`:** Source is LinkedIn About + recommendation letters. Extract recurring themes, adjectives, phrases about how the candidate works. Add only to "Strongest Behavioral Traits", "How [Candidate] Works Best", or "Management Style Preferences" sections. Do not overwrite existing scored assessments. Always label inferred additions: *[Inferred from LinkedIn About / Reference letter - review before relying on this]*
-- **`03-writing-style.md`:** Source is `cover_letter.tex` files. Extract recurring patterns. Add as observations under "## Patterns Observed in Past Applications". Do not modify existing rules. Only add if 2+ cover letters show a genuine pattern.
+- **`03-writing-style.md`:** Source is archived outreach message content (fetched Google Doc for the cover-letter format, `outreach_message.md` for LinkedIn message/email). Extract recurring patterns. Add as observations under "## Patterns Observed in Past Applications". Do not modify existing rules. Only add if 2+ archived messages show a genuine pattern.
 - **`04-job-evaluation.md`:** Source is `job_posting.md` + `outcome.md` pairs. If an application reached interview or offer: note role type and sector as a confirmed strong-fit signal. If 2+ applications repeat a no-response or rejection pattern: note it. Add findings under "## Calibration from Past Applications". Do not modify the existing scoring framework.
-- **`05-cv-templates.md`:** Source is `cv_draft.tex` files. Extract any profile statement that does not already appear in templates. Label with: *[Used for: <company>_<role>]*. **Ground before extracting:** archived drafts are tailored outputs, not source documents - verify every factual claim in an extracted statement (titles, employers, metrics, technologies) against `01-candidate-profile.md` and drop or correct any claim the profile does not support, keeping only the framing. A tailored draft that drifted must never become a template future applications start from.
-- **`06-cover-letter-templates.md`:** Source is `cover_letter.tex` files. Extract opening patterns, bullet structures, closing formulations. Add only what is structurally distinct from existing templates.
+- **`05-cv-templates.md`:** Source is archived CV content, fetched from the tailored Google Doc via the tracker's `cv_file` URL. Extract any profile statement that does not already appear in templates. Label with: *[Used for: <company>_<role>]*. **Ground before extracting:** archived drafts are tailored outputs, not source documents - verify every factual claim in an extracted statement (titles, employers, metrics, technologies) against `01-candidate-profile.md` and drop or correct any claim the profile does not support, keeping only the framing. A tailored draft that drifted must never become a template future applications start from.
+- **`06-cover-letter-templates.md`:** Source is archived outreach message content, same fetch logic as `03-writing-style.md` above. Extract opening patterns, bullet structures, closing formulations, per format. Add only what is structurally distinct from existing guidance.
 - **`07-interview-prep.md`:** Source is CV bullets, LinkedIn descriptions, reference letter quotes. Identify achievements not yet covered by an existing STAR example. Do NOT draft full STAR examples. Add stubs under "## STAR Candidates (Complete Manually)":
 
 ```markdown
@@ -223,7 +223,7 @@ Documents cover skills, experience, education, references, and behavioral signal
 - Commute or location constraints (if not visible from CV)
 - Job search configuration (use the questions from Path C Section 9 below)
 
-Then proceed to Step 3 to populate the non-skill files (`CLAUDE.md`, `cv/main_example.tex`, `.claude/skills/job-scraper/search-queries.md`). Step 3 will detect that the seven skill files are already populated and skip those substeps.
+Then proceed to Step 3 to populate the non-skill files (`CLAUDE.md`, `.claude/skills/job-scraper/search-queries.md`). Step 3 will detect that the seven skill files are already populated and skip those substeps. The CV template (base resume Google Doc + "Tailored Resumes" Drive folder) is configured separately, on first use, per `05-cv-templates.md`'s One-Time Setup - not part of this step.
 
 ---
 
@@ -353,8 +353,8 @@ Add role-specific profile statement templates based on their background.
 ### 6. Update `07-interview-prep.md` *(Path B and C; skip if Path A populated it)*
 Create STAR examples from their actual experience (at least 3-4 examples). Path A leaves STAR stubs under "## STAR Candidates (Complete Manually)" rather than full examples; if any stubs are present, mention them in Step 4 so the user knows to flesh them out.
 
-### 7. Update `cv/main_example.tex`
-Replace placeholder personal data with their actual name, contact info, and add their education and most recent experience entries.
+### 7. CV template (Google Doc)
+There is no local file to populate here. If the user hasn't already configured `05-cv-templates.md`'s `ACTIVE-GOOGLE-DOC-TEMPLATE` block, mention that the first `/apply` run will ask for their base resume's Google Doc URL and set up a "Tailored Resumes" Drive folder - a one-time step, not part of `/setup`.
 
 ### 8. Generate `.claude/skills/job-scraper/search-queries.md`
 Replace all placeholder tokens in the search queries file with the user's actual information from Section 9 (or the equivalent follow-up questions in Path A's Step A7):
@@ -382,8 +382,9 @@ Present a summary:
 > - `.claude/skills/job-application-assistant/04-job-evaluation.md` - Personalized evaluation framework
 > - `.claude/skills/job-application-assistant/05-cv-templates.md` - CV templates with your profile statements
 > - `.claude/skills/job-application-assistant/07-interview-prep.md` - STAR examples from your experience
-> - `cv/main_example.tex` - Your LaTeX CV template
 > - `.claude/skills/job-scraper/search-queries.md` - Job search queries for `/scrape`
+>
+> Your base resume Google Doc and "Tailored Resumes" Drive folder are set up separately, the first time `/apply` needs them - see `05-cv-templates.md`.
 >
 > **Privacy note:** the files above now contain your personal data and are *tracked by git*.
 > A GitHub fork of the template is always public (forks of public repos cannot be made

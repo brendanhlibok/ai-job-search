@@ -1,176 +1,125 @@
 ---
-framework_version: 1.0.1
+framework_version: 2.0.0
 ---
 
-# Cover Letter Templates and Tailoring Guide
+# Outreach Message Templates and Tailoring Guide
 
-## Template: Custom cover.cls (XeLaTeX)
+<!-- BEGIN ACTIVE-GOOGLE-DOC-TEMPLATE (set once during one-time setup - do not edit by hand) -->
+> **Style examples folder:** *not yet configured* — see "One-Time Setup" below.
+<!-- END ACTIVE-GOOGLE-DOC-TEMPLATE -->
 
-Cover letters use a custom LaTeX document class (`cover.cls`) with Lato/Raleway fonts.
+## Concept: One "Outreach Message," Three Possible Shapes
 
-**Output file:** `cover_letters/cover_<company>_<role>.tex`
-**Compile with:** XeLaTeX (cover.cls requires fontspec)
-**Font directory:** `cover_letters/OpenFonts/fonts/`
+"Cover letter" used to mean one fixed document. It's now the broader concept of **outreach**: whatever piece of writing accompanies the CV to introduce you and make the case for an interview. For a given job, the right shape is one of three:
 
-### Compile command
+1. **LinkedIn message** — a short note (hard 200-character limit) to a warm connection at the company.
+2. **Email** — a direct message to a recruiter, hiring manager, or team inbox.
+3. **Cover letter** — the traditional full document, drafted into a Google Doc, for postings that expect one.
 
-```bash
-cd cover_letters && xelatex -interaction=nonstopmode cover_<company>_<role>.tex
-```
+Only the cover-letter format produces a Google Doc. The other two are text, delivered where they're sent (a LinkedIn message box, an email body).
 
-Expected output: `Output written on cover_<company>_<role>.pdf (1 page, ...)`. Any page count other than 1 is a failure that must be fixed before presenting to the user.
+## One-Time Setup
 
-## Compile-and-Inspect Loop (MANDATORY)
+Ask for a Google Drive folder ("Outreach Examples") containing past LinkedIn messages, emails, and cover letters actually sent — real examples, not aspirational ones. Confirm access (Drive MCP `list`/`search`) and record the folder ID in the managed block above. These examples are read for **tone, structure, and typical length actually used** — salutation style, how an opening line lands, how a closing reads — never duplicated verbatim into a new draft. This mirrors how `03-writing-style.md` already treats writing-style extraction: a style reference, not a fact source, and never a phrasing to copy wholesale into an application for a different company.
 
-After writing the cover letter and before presenting to the user, always compile and visually inspect the PDF. Iterate until the layout is clean:
+If the folder is empty or a given format has no examples yet, fall back to the format specs below on their own — they're written to stand alone.
 
-1. Run `xelatex -interaction=nonstopmode cover_<company>_<role>.tex`
-2. Confirm page count is exactly 1 and compile succeeded
-3. Read the PDF via the Read tool and visually check: signature fits at the bottom, no text cut off, bullet font matches body
+## Step 1: Decide the Format (propose, then confirm)
 
-### Known template pitfall: itemize inside `\lettercontent{}`
+Before drafting anything, assess the signals available for this application and **propose one format with your reasoning**, then use `AskUserQuestion` to confirm or let the user override before drafting. Never silently pick a format.
 
-The `\lettercontent{}` macro appends `\\` to its argument. This breaks when the argument ends in `\end{itemize}` because `\\` has no line to break after the environment closes, producing `! LaTeX Error: There's no line here to end.` and no PDF output.
+| Signal | Points toward |
+|---|---|
+| A named contact who is a 1st-degree LinkedIn connection (former colleague, alum, referral) | **LinkedIn message** |
+| A direct recruiter/hiring-manager email address is known or discoverable | **Email** |
+| The application portal has an explicit cover-letter upload field, or the posting asks for one | **Cover letter** |
+| Small company/startup, informal tone elsewhere in the posting, no cover-letter field | **Email** (or LinkedIn message, if a connection exists) leaning over a formal cover letter |
+| Large/formal organization, structured portal, no personal contact identified | **Cover letter** |
+| No contact, no cover-letter field, portal-only submission | Default to **cover letter** unless the user says otherwise — it's the safest fallback when there's no signal either way |
 
-**Wrong (breaks compile):**
-```latex
-\lettercontent{Here is how my experience maps:
-\begin{itemize}
-    \item ...
-\end{itemize}}
-```
+A LinkedIn message and a cover letter are not mutually exclusive with each other in principle (a warm-connection note plus a formal application through the portal), but default to drafting **one** unless the user asks for both — most applications only need one entry point.
 
-**Correct — close `\lettercontent{}` before the list and wrap the list in the matching Raleway-Medium font so typography stays consistent:**
-```latex
-\lettercontent{Here is how my experience maps:}
+## Format 1: LinkedIn Message
 
-{\raggedright\fontspec[Path = OpenFonts/fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont
-\begin{itemize}
-    \item ...
-\end{itemize}\par}
-\vspace{6pt}
+**Hard 200-character limit.** This is not a soft target — count characters, not words, before presenting the draft. It matches LinkedIn's connection-note length, since this format is for reaching an existing 1st-degree connection, not a cold InMail to a stranger.
 
-\lettercontent{[next paragraph]}
-```
+Structure: one sentence of context (who you are / the specific role) + one clear, low-friction ask (a quick chat, a referral, a pointer to who to talk to). No pitch, no bullet list, no attachment mention — there's no room, and the CV isn't attached to a LinkedIn message anyway; if relevant, offer to send it in a follow-up reply.
 
-The font wrapper is mandatory — if you just move `\begin{itemize}` outside `\lettercontent{}` without the `\fontspec` block, bullets render in the default body font (Lato) and visually mismatch the rest of the letter.
+**Draft example shape** (not a template to fill blindly — write to the actual relationship):
+> Hi [Name] — saw [Company] is hiring for [Role] and thought of you. Would you have 10 min this week, or know who's best to point me to?
 
-## Document Structure
+Count the characters of the actual draft before presenting it. If it's over 200, cut the ask down to its shortest form before cutting context — the ask is what the reader needs to act on.
 
-```latex
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Cover Letter - [Company], [Role]
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+## Format 2: Email
 
-\documentclass[]{cover}
-\usepackage{fancyhdr}
+**Subject line:** clear and specific — role title and your name, e.g. "R&D Hardware Engineer application — Brendan Hlibok" — never a generic "Application" or "Inquiry."
 
-\pagestyle{fancy}
-\fancyhf{}
+**Length:** roughly 150-250 words. Shorter than the old cover-letter budget; email is scanned, not read closely, and a wall of text works against you here more than in a formal letter.
 
-\rfoot{Page \thepage \hspace{0pt}}
-\thispagestyle{empty}
-\renewcommand{\headrulewidth}{0pt}
-\begin{document}
+**Structure:** greeting → one sentence on the role and why you're reaching out → 2-3 sentences (or a short bullet list) on the most relevant experience, matched to the posting → one sentence on next steps or availability → sign-off. Mention the CV as an attached/linked Google Doc; don't restate its contents at length — the email is the pitch, the CV is the evidence.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     TITLE NAME
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\namesection{}{\Huge{[YOUR_NAME]}}{  \href{mailto:[YOUR_EMAIL]}{[YOUR_EMAIL]} | [YOUR_PHONE] |  \urlstyle{same}\href{[YOUR_LINKEDIN_URL]}{LinkedIn}
-}
+**Plain text, no Doc.** An email draft is delivered as the message body — write it directly, no separate file needed beyond the archive record described in `/apply`.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     MAIN COVER LETTER CONTENT
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+## Format 3: Cover Letter (Google Doc)
 
-\currentdate{\today}
-\lettercontent{Dear [Name/Team],}
-
-\lettercontent{[Opening paragraph - role, connection to background, 2-3 sentences]}
-
-\lettercontent{[Body paragraph - most relevant experience, introducing the bullet list]}
-
-{\raggedright\fontspec[Path = OpenFonts/fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont
-\begin{itemize}
-    \item [Concrete achievement/skill 1]
-    \item [Concrete achievement/skill 2]
-    \item [Concrete achievement/skill 3]
-\end{itemize}\par}
-
-\lettercontent{[Connection to company - why this role, why this company specifically]}
-
-\lettercontent{[Personal fit paragraph - behavioral strengths, team contribution, 2-3 sentences]}
-
-\lettercontent{I look forward to hearing from you.}
-
-\begin{flushright}
-% No trailing \\ inside \closing{} - cover.cls appends its own \\, and a
-% doubled break triggers "! LaTeX Error: There's no line here to end."
-\closing{Kind regards,}
-
-\signature{[YOUR_NAME]}
-\end{flushright}
-\end{document}
-```
-
-## Key Commands Reference
-
-| Command | Purpose |
-|---------|---------|
-| `\namesection{}{Name}{contact info}` | Header with name and contact |
-| `\currentdate{date}` | Date field (use `\today` or explicit date) |
-| `\lettercontent{text}` | Body paragraph (adds spacing after) |
-| `\closing{text}` | Closing line |
-| `\signature{name}` | Printed name below signature |
-
-## Tailoring Guidelines
+Used when a posting or portal explicitly expects one, or as the safe default when no other signal points elsewhere. Drafted into a **fresh Google Doc each time** — there's no single reusable base document the way the CV has one (a cover letter's content is bespoke per application by nature), but the visual shape should stay consistent across applications: match the pattern seen in the "Outreach Examples" folder's past cover letters (name/contact header, paragraph body, closing/signature block) so a new one doesn't look like a one-off improvisation.
 
 ### Salutation
 - If you know the hiring manager's name: "Dear [First Last],"
 - If you know the team: "Dear [Company] hiring team,"
 - Generic: "Dear [Company]," (avoid "To whom it may concern")
 
-### Length - Hard 1-Page Limit
+### Length — Hard 1-Page Limit
 - Target: 1 page including signature block
 - Maximum: **never exceed 1 page**
-- **Word budget: 250-300 words** of body text (not counting LaTeX markup). This is the safe maximum. 350 words will overflow.
-- **Always count**: opening paragraph + bullet list paragraph + closing paragraph = 3 blocks. Add a 4th only if the others are short.
-- When adding company-specific content, trim other content to compensate rather than adding net length
+- **Word budget: 250-300 words** of body text. This is the safe maximum; 350 words will overflow a normal one-page layout.
+- **Always count**: opening paragraph + a body paragraph (with an optional short bullet list of concrete achievements) + closing paragraph = 3 blocks. Add a 4th only if the others are short.
+- When adding company-specific content, trim other content to compensate rather than adding net length.
 
-### Line Spacing
-- Add `\usepackage{setspace}` and `\setstretch{1.0}` if the letter is long and needs to fit on one page
-- Use `\vspace{.5cm}` between major sections for readability (only if space permits)
+### Structure
+1. Opening — role, connection to background, 2-3 sentences.
+2. Body — most relevant experience; a short 3-bullet list of concrete achievements works well here and reads faster than a dense paragraph.
+3. Company-specific paragraph — why this role, why this company specifically, referencing something real (mission, product, recent news) rather than a generic compliment.
+4. Personal-fit paragraph — behavioral strengths, team contribution, 2-3 sentences.
+5. Closing — brief, forward-looking, then sign-off.
 
-### Bullet Lists
-- Place `\begin{itemize}...\end{itemize}` **outside** a `\lettercontent{}` block (see "Known template pitfall" above), wrapped in the matching Raleway-Medium `\fontspec` so the bullet font matches the body
-- 3-5 bullets is ideal
-- Start each bullet with bold label or action verb
-- Use `\textbf{Label:}` for category-style bullets
-
-### LaTeX Special Characters
-- Underscore: `\_`
-- Ampersand: `\&`
+### Export-and-Inspect Loop (MANDATORY)
+Same discipline as the CV: after drafting, export the Doc to PDF (Drive API `files.export`) and Read it to visually confirm it fits on exactly 1 page with the signature block intact and nothing cut off. If it overflows, trim content per the word budget above — there's no LaTeX-style rescue lever here, so stay well under budget rather than editing right up to the edge.
 
 ### Non-English Cover Letters
-- Same template structure, just write content in the posting's language
+- Same structure, just write content in the posting's language
 - Adjust date format to local convention
 - Adjust closing to local convention (e.g. "Med venlig hilsen," for Danish)
 
+## Writing Rules That Apply to All Three Formats
+- No em-dashes (use commas or periods instead)
+- No cliches or empty filler
+- Every claim backed by a specific example
+- Forward-looking framing: focuses on tasks you'll solve, not just past duties
+- Company name and role are correct throughout
+- Language matches the job posting's language
+
 ## Checklist Before Finalizing
-- [ ] No em-dashes (use commas or periods instead)
-- [ ] No cliches or empty filler
-- [ ] Every claim backed by specific example
-- [ ] Forward-looking framing: focuses on tasks you'll solve, not just past duties
-- [ ] Motivation section references this specific company's mission/values
-- [ ] Company name and role are correct throughout
+
+**LinkedIn message:**
+- [ ] Character count is ≤200 (counted, not estimated)
+- [ ] One clear ask, no pitch/bullet list
+- [ ] Addressed to an actual 1st-degree connection, not a cold contact
+
+**Email:**
+- [ ] Subject line names the role and your name
+- [ ] 150-250 words
+- [ ] CV mentioned as attached/linked, not restated
+- [ ] Professional but not stiff tone, matched to the company's formality
+
+**Cover letter:**
+- [ ] Fits on exactly one page after export-and-inspect
+- [ ] Motivation paragraph references this specific company's mission/values
 - [ ] Date is current
-- [ ] Fits on one page
-- [ ] Language matches the job posting language
 - [ ] Salutation is appropriate (named person if possible)
-- [ ] Headline is engaging and specific, not generic
+- [ ] Opening line is engaging and specific, not generic
 
 ## Submission Guidelines (Best Practice)
-- Submit only the documents the employer requests
-- Export as PDF to preserve formatting
-- Name files clearly: "[Your Name] CV" and "[Your Name] Cover Letter"
+- Submit only what the format calls for: LinkedIn message stays in LinkedIn, email stays as an email, cover letter Doc gets shared/exported per the employer's instructions
+- For a cover-letter Doc that needs to leave Google Docs, export as PDF to preserve formatting
 - Follow all employer instructions regarding anonymity or specific materials

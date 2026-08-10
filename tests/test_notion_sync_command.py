@@ -46,7 +46,7 @@ class NotionSyncCommandSpec(unittest.TestCase):
     def test_privacy_rule_documents_never_sync(self):
         text = COMMAND.read_text(encoding="utf-8")
         self.assertIn(
-            "never upload, attach, or embed",
+            "never upload, attach, fetch, export, or embed",
             text,
             "spec lost the rule that CV/cover-letter content never syncs to Notion",
         )

@@ -1,5 +1,5 @@
 ---
-framework_version: 1.2.2
+framework_version: 1.2.3
 ---
 
 # Job Evaluation Framework
@@ -60,9 +60,9 @@ How well do the required/preferred skills align with the candidate's capabilitie
 | 40-59 | Partial match, significant upskilling needed |
 | 0-39 | Fundamental mismatch |
 
-**Strong match areas:** [YOUR_PRIMARY_SKILLS]
-**Moderate match areas:** [YOUR_SECONDARY_SKILLS]
-**Weak match areas:** [SKILLS_YOU_LACK]
+**Strong match areas:** Mechanical design and CAD (SolidWorks, Creo, DFM/DFA, GD&T), rapid prototyping (3D printing, CNC, laser cutting), PCB design and embedded electronics (KiCAD, EAGLE, ESP32, Arduino)
+**Moderate match areas:** Software/scripting (Python, C++, MATLAB, Linux/Bash), robotics field operations and deployment, cross-functional hardware/software/electrical integration
+**Weak match areas:** Production-volume manufacturing/DFM, formal product management, enterprise/ML software engineering
 
 ### 2. Experience Match (0-100)
 Does work history align with what they're looking for?
@@ -74,9 +74,9 @@ Does work history align with what they're looking for?
 | 40-59 | Adjacent experience, would need to make the case |
 | 0-39 | Unrelated experience |
 
-**Strong:** [YOUR_DIRECT_EXPERIENCE_DOMAINS]
-**Moderate:** [YOUR_ADJACENT_EXPERIENCE]
-**Entry-level:** [ROLES_WITH_LIMITED_EXPERIENCE]
+**Strong:** Early-stage/prototype-phase mechanical and electromechanical product design (capstone project, lab research, internship); rapid prototyping and iteration
+**Moderate:** Robotics field operations and deployment (Rugged Robotics) - transferable troubleshooting and systems-thinking, but not core product design
+**Entry-level:** Full end-to-end product design ownership (concept-to-market), production-scale DFM/DFT - actively targeting junior/entry-level roles to build this
 
 ### 3. Behavioral/Culture Fit (0-100)
 Does the role and company culture match the behavioral profile?
@@ -107,19 +107,19 @@ Does this role advance career goals and contain tasks that energize?
 | 0-39 | Dead end or backwards step |
 
 **Career goals:**
-- [YOUR_CAREER_GOAL_1]
-- [YOUR_CAREER_GOAL_2]
-- [YOUR_CAREER_GOAL_3]
+- Become a product design engineer at a small product design firm, working the full lifecycle from early concept to a market-ready product
+- Currently building depth in product design skills and experience via junior or entry-level roles; open to stepping back from the current operations-focused role to do so
+- Prefers small/startup-sized companies over large corporations
 
 **Motivation filter:** Evaluate not just whether you *can* do the tasks, but whether the tasks will *energize* you. Consider:
-- Tasks that energize: [YOUR_ENERGIZING_TASKS]
-- Tasks that drain: [YOUR_DRAINING_TASKS]
-- Non-task factors: leadership style, department culture, company values, degree of autonomy
+- Tasks that energize: Early-stage/concept-phase product development, hands-on CAD modeling, cross-disciplinary work spanning electrical and software components, learning from experienced engineers in a junior/mentee capacity
+- Tasks that drain: Pure operations/logistics work disconnected from design, long-hours/grind-culture environments (6-day weeks, 9+ hour days), being placed above his current skill level without mentorship
+- Non-task factors: small team size, startup-like culture, growth-oriented junior role with room to learn
 
 **Life situation alignment:** Consider personal constraints:
-- **Security**: [YOUR_FINANCIAL_SITUATION_CONTEXT]
-- **Flexibility**: [YOUR_SCHEDULE_CONSTRAINTS]
-- **Professional development**: [YOUR_GROWTH_PRIORITIES]
+- **Security**: Currently earning $95,000/year; would go to $80,000 for the right opportunity, $75,000 only hesitantly as a floor; ideally matching $95,000
+- **Flexibility**: Wants reasonable working hours; explicitly ruling out roles with 6-day weeks or 9+ hour days / grind culture; protects personal time and hobbies
+- **Professional development**: Prioritizes roles that build product design skills and experience over compensation or seniority; wants mentorship from experienced engineers in a junior capacity
 
 ### 6. Salary Benchmark (Optional)
 

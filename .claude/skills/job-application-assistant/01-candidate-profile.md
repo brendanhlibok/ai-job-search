@@ -1,5 +1,5 @@
 ---
-framework_version: 1.1.1
+framework_version: 1.1.2
 ---
 
 # Candidate Profile
@@ -8,14 +8,16 @@ framework_version: 1.1.1
 <!-- After running /setup, all sections will be filled with your actual information -->
 
 ## Identity
-- **Name:** [YOUR_NAME]
-- **Location:** [YOUR_ADDRESS]
-- **Phone:** [YOUR_PHONE]
-- **Email:** [YOUR_EMAIL]
+- **Name:** Brendan Hlibok
+- **Location:** Houston, TX
+- **Phone:** 410-300-6807
+- **Email:** brendanhlibok@gmail.com
+- **Portfolio:** brendanhlibok.framer.website
 - **LinkedIn:** [YOUR_LINKEDIN_URL]
 - **GitHub:** [YOUR_GITHUB_URL]
-- **Status:** [YOUR_EMPLOYMENT_STATUS]
-- **Constraints:** [YOUR_COMMUTE_OR_LOCATION_CONSTRAINTS]
+- **Citizenship:** U.S. citizen
+- **Status:** Employed full-time (Robotic Operations Engineer, Rugged Robotics), actively seeking a new role in product design engineering
+- **Constraints:** Currently based in Houston, TX but actively looking to relocate away from it. Must live in, or within ~30 minutes by car of, a major city. Target cities: San Francisco, Seattle, New York City, Chicago, Los Angeles, Atlanta, Austin, Denver, Washington DC, Philadelphia, Boston. Prefers access to nature and/or East Coast proximity to family.
 
 ### Languages
 <!-- Every language you can work in professionally, with your honest level. Used by the
@@ -25,47 +27,65 @@ a hard no, not a gap to smooth over. -->
 
 | Language | Level | Notes |
 |----------|-------|-------|
-| [LANGUAGE] | [LEVEL, e.g. "Native" / "C2" / "B1/B2 (conversational)"] | [optional] |
+| English | Native | |
+| American Sign Language | Fluent | |
 
 ## Education
 
 | Degree | Period | Institution | Key Topics |
 |--------|--------|-------------|------------|
-| [DEGREE] | [YEARS] | [INSTITUTION] | [TOPICS] |
+| B.S. Mechanical Engineering, Minor in Engineering Design (cum laude, GPA 3.87/4.00) | 2021-2025 | Rice University, Houston, TX | Mechanics/Statics, Rigid Body Dynamics, Stress Analysis, Mechanical Elements, Control Systems, Heat Transfer, Vibrations, Design of Mechatronic Systems, Prototyping & Fabrication |
 
 ## Professional Experience
 
-### [JOB_TITLE] - [COMPANY] ([START] - [END])
-[LOCATION]
-- [RESPONSIBILITY_OR_ACHIEVEMENT_1]
-- [RESPONSIBILITY_OR_ACHIEVEMENT_2]
-- [RESPONSIBILITY_OR_ACHIEVEMENT_3]
+### Robotic Operations Engineer - Rugged Robotics (August 2025 - Present)
+Houston, TX
+- Lead deployment of autonomous mobile robots on large-scale construction sites, coordinating customer data processing and diagnosing robot failures with root cause analysis using robot telemetry, sensor data, and robot logs to maintain uptime.
+- Automate the BIM/CAD processing pipeline in Linux by scripting data transformation tasks in Python and Bash, reducing manual processing time and streamlining robot path generation.
+- Manage and train a team of 5 operators on autonomous robot systems, leading onboarding, operator technical development, and interpersonal conflict resolution to optimize site deployment and team performance.
 
-<!-- Add more roles as needed -->
+### Capstone Design Project: Haptic Wristband with Tactile and Squeeze Feedback (August 2024 - July 2025)
+Rice University, Houston, TX
+- Awarded 1st-Place Student Project Worldwide (ISCAS 2025) and a Work-in-Progress publication (World Haptics Conference 2025) for developing a haptic bracelet with tactile and squeeze capabilities.
+- Achieved real-time (<10Hz) and robust (0-10N) squeeze haptics and integrated hardware with a Unity (C#) VR environment.
+
+### Robotics Engineering Intern - MD Anderson Cancer Center (May 2024 - August 2024)
+Houston, TX
+- Fabricated a custom end-effector for a Universal Robots 6 DoF robot arm compatible with various surgical tools using Solidworks, 3D Printing, and CNC machining.
+- Processed and visualized real-time robotic force data with TCP/IP and Python to provide actionable feedback during surgical operations.
+
+### Undergraduate Researcher - Mechatronics and Haptic Interfaces Lab, Rice University (June 2023 - May 2025)
+Houston, TX
+- Designed a custom pressure-sensing insole and haptic belt to assess long-term gait improvement potential for lower-limb prosthesis users with SolidWorks, C++ (Arduino), and 3D printing.
+- Developed an automated test bench to evaluate durability over 100,000 walking cycles at a 105lb load using a cyclically powered electromagnet and control system in C++ (Arduino).
+- Accelerated prototyping of legacy lab projects, saving ~5 hours per assembly by replacing manually wired circuits with custom PCBs using KiCAD.
 
 ## Independent Projects
 <!-- Projects outside of employment: freelance, open source, personal -->
-- **[PROJECT_NAME]**: [DESCRIPTION]
+- **Split-Flap Display** (July 2026 - Present): Designing a 3x15 modular split-flap character display using Creo, 3D printing, and a custom PCB (KiCAD) with an ESP32 (C++) to process custom user text inputs into physical display sequences.
+
+### Leadership & Activities
+- Engineering Design Mentor, Oshman Engineering Design Kitchen at Rice University (2022-2025)
+- President, Rice University Club Lacrosse (2023-2025)
 
 ## Technical Skills
 
-### Programming & ML
-- **[LANGUAGE]** ([PROFICIENCY]): [FRAMEWORKS_AND_LIBRARIES]
-- [OTHER_SKILLS]
+### Mechanical
+- SolidWorks (CAD/FEA), Creo, DFM/DFA, GD&T, Prototyping (3D Printer, CNC, Lathe, Laser Cutter)
 
-### Domain Expertise
-- [DOMAIN_1]
-- [DOMAIN_2]
+### Electrical
+- PCB Design (KiCAD, EAGLE), ESP32, Arduino, BeagleBoard, Signal Processing, Circuit Design
 
-### Software & Tools
-- [TOOL_LIST]
+### Software
+- Python, C++, MATLAB, Linux (Bash), Git; Familiar with Unity, C#, Java
 
 ## Publications
 <!-- List peer-reviewed publications, if any -->
-1. [AUTHOR_LIST] ([YEAR]). [TITLE]. [JOURNAL]. [DOI_LINK]
+1. Hlibok, B. et al. (2025). Haptic Wristband with Tactile and Squeeze Feedback [Work-in-Progress]. World Haptics Conference (WHC) 2025.
 
 ## Awards
-- [AWARD] - [EVENT] ([YEAR])
+- 1st-Place Student Project Worldwide - ISCAS 2025 (2025)
+- cum laude - Rice University (2025)
 
 ## References
 - [NAME], [TITLE], [COMPANY] ([EMAIL], [PHONE])

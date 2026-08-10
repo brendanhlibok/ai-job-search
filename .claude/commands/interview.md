@@ -2,7 +2,7 @@
 
 You are preparing the user for a real, scheduled interview on one of their applications. The frameworks for this already exist - `07-interview-prep.md` (STAR examples, tough questions, questions to ask, roleplay protocol) and the Company Research Checklist in `04-job-evaluation.md` - and the `/outcome` archive records which stage the user is at and what earlier stages surfaced. This command wires them together into a stage-specific prep pack and an optional mock interview.
 
-`/apply` optimizes what the company reads; `/interview` optimizes what the company hears. The bridge between them is consistency: the interviewer has read the submitted CV and cover letter, so everything prepared here must match what those documents claim.
+`/apply` optimizes what the company reads; `/interview` optimizes what the company hears. The bridge between them is consistency: the interviewer has read the submitted CV and outreach message, so everything prepared here must match what those claim.
 
 Follow these steps **in order**.
 
@@ -21,11 +21,11 @@ v1 preps for a **specific application**. Generic no-target practice is out of sc
 
 ## Step 1: Load the Application Context
 
-1. **The archive** (started by `/apply`, maintained by `/outcome`): `documents/applications/<company>_<role>/`
+1. **The archive** (started by `/apply`, maintained by `/outcome`): `documents/applications/<company>_<role>/`, plus the tracker row itself
    - `job_posting.md` - the exact posting the user applied to
-   - `cv_draft.tex` and `cover_letter.tex` - what was actually submitted. **These are what the interviewer read**; every talking point must be consistent with their claims.
+   - **CV and outreach message** - what was actually submitted. **These are what the interviewer read**; every talking point must be consistent with their claims. Fetch the CV's content from the tracker row's `cv_file` URL (Docs MCP). Fetch the outreach message from `cover_letter_file`: if it's a URL, fetch the Doc content the same way; if it's a local path, read `documents/applications/<company>_<role>/outreach_message.md`.
    - `outcome.md` - the stage reached so far and any recorded feedback from earlier stages. Feedback from stage N is the highest-value input for stage N+1 prep.
-2. **Fallbacks** (the application may predate `/outcome`): posting via WebFetch on the tracker row's `source` URL, or ask the user to paste it; CV via `cv/main_<company>*.tex` and cover letter via `cover_letters/cover_<company>_*.tex`. State plainly which context is missing rather than guessing - and suggest `/outcome <company>` to build the archive for next time.
+2. **Fallbacks** (the application may predate this workflow, or was made outside `/apply`): posting via WebFetch on the tracker row's `source` URL, or ask the user to paste it; if the tracker row has no `cv_file`/`cover_letter_file` at all, there's no local glob to fall back to (both live in Google Docs, not this repo) - ask the user for the Doc URL(s) directly. State plainly which context is missing rather than guessing - and suggest `/outcome <company>` to build the archive for next time.
 3. **Ask the user what this interview is** (skip anything `outcome.md` already records): stage (phone screen / technical / case / final round), date, format (phone, video, onsite), and who is interviewing (names and titles, if known).
 4. **Read the frameworks once** - do not re-read them in later steps:
    - `.claude/skills/job-application-assistant/07-interview-prep.md`
@@ -65,7 +65,7 @@ Match the ready-made STAR examples in `07-interview-prep.md` to the likely quest
 - If `/setup` left incomplete STAR stubs relevant to this role, surface them: the user should fill in the details before the interview.
 
 ### 3. Consistency brief
-A short list of the specific claims the submitted CV and cover letter make (achievements, numbers, skills emphasized) that the interviewer is most likely to probe. The rule stated plainly: **no claim in the room that isn't on the paper, and every claim on the paper must be defensible in depth.**
+A short list of the specific claims the submitted CV and outreach message make (achievements, numbers, skills emphasized) that the interviewer is most likely to probe. The rule stated plainly: **no claim in the room that isn't on the paper, and every claim on the paper must be defensible in depth.**
 
 ### 4. Tough questions, customized
 The relevant entries from `07`'s tough-question list with per-application answers - "Why this company specifically?" must use the verified hooks from Step 2, never a generic line.
@@ -84,7 +84,7 @@ Save the pack to `documents/applications/<company>_<role>/interview_prep_<stage>
 
 Ask if the user wants to practice. If yes, run the roleplay **in this conversation** following the Roleplay Guidelines in `07-interview-prep.md` exactly: warm-up first, then role-specific technical questions, 1-2 behavioral questions tied to the posting's competencies, and one tough question or curveball. After each answer, give brief feedback - what worked, what to sharpen, and which STAR example from the pack would have served better.
 
-Calibrate feedback against `02-behavioral-profile.md`: coach toward the user's natural register, not a generic ideal - the same voice-consistency rule the `/apply` reviewer applies to cover letters.
+Calibrate feedback against `02-behavioral-profile.md`: coach toward the user's natural register, not a generic ideal - the same voice-consistency rule the `/apply` reviewer applies to outreach messages.
 
 ---
 
@@ -100,7 +100,7 @@ If Step 3 drafted new STAR answers the user approved for keeps, remind them thos
 
 ## Important Rules
 
-1. **Consistency with the submitted documents.** The interviewer read the archived CV and cover letter; prep must never contradict them or coach claims beyond them.
+1. **Consistency with the submitted documents.** The interviewer read the archived CV and outreach message; prep must never contradict them or coach claims beyond them.
 2. **Honesty on gaps.** Weak matches get bridge answers (acknowledge → adjacent experience → learning path), never invented experience. Same rule as everywhere else in this repo.
 3. **Verified research only.** Company specifics go in the pack only after independent confirmation. Interviewer notes stick to public professional information.
 4. **Stage-appropriate prep.** A phone screen pack and a final-round pack are different documents; recorded feedback from earlier stages takes priority over generic question lists.
