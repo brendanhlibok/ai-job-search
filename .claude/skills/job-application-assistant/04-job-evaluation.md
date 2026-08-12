@@ -180,9 +180,9 @@ Present the evaluation as:
 ```
 
 ## Weighting
-- Technical Skills: 30%
-- Experience Match: 25%
-- Behavioral Fit: 15%
+- Technical Skills: 35%
+- Experience Match: 30%
+- Behavioral Fit: 5%
 - Career Alignment: 30%
 
 (Location is pass/fail, not weighted)

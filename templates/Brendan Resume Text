@@ -1,0 +1,67 @@
+header:
+    name: Brendan Hlibok
+    city: Houston, TX
+    email: brendanhlibok@gmail.com 
+    website: brendanhlibok.framer.website
+    phone: 410-300-6807
+
+education:
+    college: Rice University
+    college location: Houston, TX
+    grad date: May 2025
+    major(s): Mechanical Engineering
+    minor: Engineering Design
+    gpa: 3.87/4.0
+
+technical experience:
+    experience 1: Rugged Robotics
+        location: Houston, TX
+        dates: August 2025 - Present
+        title:Robotic Operations Engineer
+        bullet 1: Lead deployment of autonomous mobile robots on large-scale construction sites, coordinating customer data processing and diagnosing robot failures with root cause analysis using robot telemetry, sensor data, and robot logs to maintain uptime.
+        bullet 2: Automate the BIM/CAD processing pipeline in Linux by scripting data transformation tasks in Python and Bash, reducing manual processing time and streamlining robot path generation.
+        bullet 3: Manage and train a team of 5 operators on autonomous robot systems, leading onboarding, operator technical development, and interpersonal conflict resolution to optimize site deployment and team performance. 
+    experience 2: Haptic Wristband with Tactile and Squeeze Feedback
+        location: 
+        dates: August 2024 - July 2025
+        title: Capstone Design Project
+        bullet 1: Awarded 1st-Place Student Project Worldwide (ISCAS 2025) and a Work-in-Progress publication (World Haptics Conference 2025) for developing a haptic bracelet with tactile and squeeze capabilities.
+        bullet 2: Achieved real-time (<10Hz) and robust (0-10N) squeeze haptics and integrated hardware with a Unity (C#) VR environment.
+        bullet 3:
+    experience 3: MD Anderson Cancer Center
+        location: Houston, TX
+        dates: May 2024 - August 2024
+        title: Robotics Engineering Intern
+        bullet 1: Fabricated a custom end-effector for a Universal Robots 6 DoF robot arm compatible with various surgical tools using Solidworks, 3D Printing, and CNC machining.
+        bullet 2: Processed and visualized real-time robotic force data with TCP/IP and Python to provide actionable feedback during surgical operations.
+        bullet 3:
+    experience 4: Mechatronics and Haptic Interfaces Lab, Rice University
+        location: Houston, TX
+        dates: June 2023 - May 2025
+        title: Undergraduate Researcher
+        bullet 1: Designed a custom pressure-sensing insole and haptic belt to assess long-term gait improvement potential for lower-limb prosthesis users with SolidWorks, C++ (Arduino), and 3D printing.
+        bullet 2: Developed an automated test bench to evaluate durability over 100,000 walking cycles at a 105lb load using a cyclically powered electromagnet and control system in C++ (Arduino).
+        bullet 3: Accelerated prototyping of legacy lab projects, saving ~5 hours per assembly by replacing manually wired circuits with custom PCBs using KiCAD.
+
+personal projects:
+    project 1:
+        dates: July 2026 - Present
+        name: Split-Flap Display
+        bullet: Designing a 3x15 modular split-flap character display using Creo, 3D printing, and a custom PCB (KiCAD) with an ESP32 (C++) to process custom user text inputs into physical display sequences.
+
+activities:
+    activity 1: Engineering Design Mentor
+        organization: Oshman Engineering Design Kitchen at Rice University
+        dates: 2022-2025
+    activity 2: President
+        organization: Rice University Club Lacrosse
+        dates: 2023-2025
+
+skills:
+    mechanical: SolidWorks (CAD/FEA), Creo, DFM/DFA, GD&T, Prototyping (3D Printer, CNC, Lathe, Laser Cutter)
+    electrical: PCB Design (KiCAD, EAGLE), ESP32, Arduino, BeagleBoard, Signal Processing, Circuit Design
+    software:
+        strong: Python, C++, MATLAB, Linux (Bash), Git
+        familiar: Unity, C#, Java
+
+

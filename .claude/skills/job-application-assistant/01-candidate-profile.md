@@ -13,8 +13,8 @@ framework_version: 1.1.2
 - **Phone:** 410-300-6807
 - **Email:** brendanhlibok@gmail.com
 - **Portfolio:** brendanhlibok.framer.website
-- **LinkedIn:** [YOUR_LINKEDIN_URL]
-- **GitHub:** [YOUR_GITHUB_URL]
+- **LinkedIn:** https://www.linkedin.com/in/brendan-hlibok-010a6023a/
+- **GitHub:** https://github.com/brendanhlibok
 - **Citizenship:** U.S. citizen
 - **Status:** Employed full-time (Robotic Operations Engineer, Rugged Robotics), actively seeking a new role in product design engineering
 - **Constraints:** Currently based in Houston, TX but actively looking to relocate away from it. Must live in, or within ~30 minutes by car of, a major city. Target cities: San Francisco, Seattle, New York City, Chicago, Los Angeles, Atlanta, Austin, Denver, Washington DC, Philadelphia, Boston. Prefers access to nature and/or East Coast proximity to family.
@@ -88,6 +88,9 @@ Houston, TX
 - cum laude - Rice University (2025)
 
 ## References
-- [NAME], [TITLE], [COMPANY] ([EMAIL], [PHONE])
+- Dr. Marcia O'Malley - Rice University
+- Dr. Matthew Wettergreen - Rice University
+- Dr. Shane King - Montana State University
+- Savannah Esteve-Morrealle - MD Anderson Cancer Center
 
-More references available upon request.
+Contact details available upon request.

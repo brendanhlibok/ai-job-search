@@ -31,7 +31,7 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 - **CV language:** English <!-- English unless your market expects otherwise; /setup asks -->
 
 - **Status:** Employed full-time (Robotic Operations Engineer, Rugged Robotics), actively seeking a new role in product design engineering
-- **LinkedIn headline:** "[YOUR_LINKEDIN_HEADLINE]"
+- **LinkedIn headline:** "Robotic Operations Engineer at Rugged Robotics"
 
 ### Education
 <!-- List your degrees, most recent first -->
@@ -57,14 +57,14 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
   - Accelerated prototyping of legacy lab projects, saving ~5 hours per assembly with custom PCBs (KiCAD)
 
 ### Technical Skills
-- **Primary:** SolidWorks (CAD/FEA), Creo, DFM/DFA, GD&T, Prototyping (3D Printer, CNC, Lathe, Laser Cutter)
+- **Primary:** SolidWorks (CAD/FEA), Creo, Rapid Prototyping (3D Printer, CNC, Lathe, Laser Cutter), DFM/DFA, GD&T
 - **Secondary:** PCB Design (KiCAD, EAGLE), ESP32, Arduino, BeagleBoard, Signal Processing, Circuit Design
 - **Domain:** Product design (concept-to-prototype), mechatronics, robotics operations
-- **Software:** Python, C++, MATLAB, Linux (Bash), Git; familiar with Unity, C#, Java
+- **Software:** Python, C++, Linux (Bash), MATLAB, Git; familiar with Unity, C#, Java
 
 ### Certifications
 <!-- List relevant certifications with dates -->
-- **[CERTIFICATION_NAME]** - [HOURS]h - completed [DATE]
+None currently.
 
 ### Publications
 <!-- List peer-reviewed publications, if any -->
@@ -76,13 +76,12 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 - cum laude - Rice University (2025)
 
 ### Behavioral Profile
-<!-- Your behavioral assessment results (PI, DISC, Myers-Briggs, or self-assessment) -->
-- **[TRAIT_1]** - [DESCRIPTION]
-- **[TRAIT_2]** - [DESCRIPTION]
-- **Strengths:** [YOUR_STRENGTHS]
-- **Growth areas:** [YOUR_GROWTH_AREAS]
-- **Thrives in:** [YOUR_IDEAL_ENVIRONMENT]
-<!-- No formal assessment on file yet - /setup will ask behavioral questions directly and fill this in. -->
+<!-- Self-assessed; full detail and job-posting-language mapping in 02-behavioral-profile.md -->
+- **Independent, deliberate builder** - Thinks an approach through fully before committing, then moves fast and iteratively once a direction is set; prefers owning a piece of work end-to-end and syncing at natural milestones over constant oversight
+- **Relationship-focused communicator** - Builds rapport and communicates with warmth and context rather than purely transactional exchanges
+- **Strengths:** Deliberate, thoughtful decision-making paired with comfort in fast-iterating environments; independent project ownership; relationship-focused communication
+- **Growth areas:** Building deeper product design experience beyond capstone/internship-level work (actively pursuing via junior/entry-level roles, not a gap); balancing a preference for deliberation with fast-iteration environments (frame as "measured but fast")
+- **Thrives in:** Small, hands-on teams close to the whole project (not one narrow slice); environments with experienced engineers who actively mentor; fast, iterative prototyping cycles with room to adjust course
 
 ### What Excites You
 <!-- What motivates you professionally -->
@@ -94,6 +93,7 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 <!-- Industries and companies you're targeting -->
 - Product design / industrial design consultancies: Pump Studios (ideal-fit example)
 - Mechatronics / robotics hardware companies
+- Medical robotics / assistive technology (haptics, VR/AR, prosthetics-adjacent design)
 
 ### Deal-breakers
 <!-- Hard constraints on job search. Language requirements are handled separately and
