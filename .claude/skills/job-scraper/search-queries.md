@@ -28,7 +28,7 @@ Queries are grouped by priority. All queries are in English. Combine each query 
 
 ### Priority 1: Product Design Engineering
 
-These match the candidate's strongest and most desired career direction: junior/entry-level product design roles at small firms, covering the full concept-to-market lifecycle.
+One of three co-equal target directions (see Priorities 2 and 3 below): junior/entry-level product design roles at small firms, covering the full concept-to-market lifecycle.
 
 ```
 site:linkedin.com/jobs "Product Design Engineer" [CITY]
@@ -37,28 +37,53 @@ site:linkedin.com/jobs "Mechanical Design Engineer" [CITY]
 "Mechanical Design Engineer" entry level OR junior [CITY]
 ```
 
-### Priority 2: Mechatronics / Cross-Disciplinary Hardware Roles
+### Priority 2: Technical / Robotics Project Management
+
+Added 2026-09-08: this reflects what the candidate's current Rugged Robotics role actually is
+(stakeholder coordination, project timelines, team management), not just an adjacency - a
+co-equal target with Priority 1, not a fallback.
+
+```
+site:linkedin.com/jobs "Technical Project Manager" robotics entry level OR junior [CITY]
+site:linkedin.com/jobs "Program Coordinator" robotics OR hardware entry level OR junior [CITY]
+"Robotics Project Manager" entry level OR junior [CITY]
+"Associate Project Manager" engineering OR robotics OR hardware [CITY]
+```
+
+### Priority 3: Robotics Software & Test Engineering
+
+Added 2026-09-08: matches the candidate's actual robot-software-development, data-pipeline
+tooling, and QA/field-testing work at Rugged Robotics.
+
+```
+site:linkedin.com/jobs "Robotics Software Engineer" entry level OR junior [CITY]
+site:linkedin.com/jobs "Test Engineer" robotics entry level OR junior [CITY]
+site:linkedin.com/jobs "QA Engineer" robotics OR hardware entry level OR junior [CITY]
+"Field Test Engineer" robotics [CITY]
+```
+
+### Priority 4: Mechatronics / Cross-Disciplinary Hardware Roles
 
 Match the candidate's combined mechanical + electrical + embedded software background.
 
 ```
-site:linkedin.com/jobs "Mechatronics Engineer" [CITY]
-"SolidWorks" "KiCAD" engineer [CITY]
-"product development engineer" prototyping [CITY]
+site:linkedin.com/jobs "Mechatronics Engineer" entry level OR junior [CITY]
+"SolidWorks" "KiCAD" engineer entry level OR junior [CITY]
+"product development engineer" prototyping entry level OR junior [CITY]
 ```
 
-### Priority 3: Adjacent Roles
+### Priority 5: Adjacent Roles
 
 Roles the candidate could pivot into that still build toward product design experience.
 
 ```
 site:linkedin.com/jobs "Manufacturing Engineer" entry level [CITY]
-site:linkedin.com/jobs "R&D Engineer" [CITY]
+site:linkedin.com/jobs "R&D Engineer" entry level OR junior [CITY]
 site:linkedin.com/jobs "Hardware Engineer" junior [CITY]
-site:linkedin.com/jobs "NPI Engineer" [CITY]
+site:linkedin.com/jobs "NPI Engineer" entry level OR junior [CITY]
 ```
 
-### Priority 4: Broader Net
+### Priority 6: Broader Net
 
 Wider search leveraging the candidate's current robotics/operations experience as a fallback direction.
 

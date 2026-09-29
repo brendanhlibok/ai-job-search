@@ -30,7 +30,7 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
   04-job-evaluation.md's Language Gate. -->
 - **CV language:** English <!-- English unless your market expects otherwise; /setup asks -->
 
-- **Status:** Employed full-time (Robotic Operations Engineer, Rugged Robotics), actively seeking a new role in product design engineering
+- **Status:** Employed full-time (Robotic Operations Engineer, Rugged Robotics), actively seeking a new role in product design engineering, technical/robotics project management, or robotics software & test engineering
 - **LinkedIn headline:** "Robotic Operations Engineer at Rugged Robotics"
 
 ### Education
@@ -42,8 +42,9 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 ### Professional Experience
 <!-- List your roles, most recent first -->
 - **Robotic Operations Engineer** (August 2025 - Present) - **Rugged Robotics** (Houston, TX)
-  - Lead deployment of autonomous mobile robots on large-scale construction sites, diagnosing robot failures via telemetry, sensor data, and logs
-  - Automate the BIM/CAD processing pipeline in Linux (Python, Bash), reducing manual processing time and streamlining robot path generation
+  - Coordinate across engineering, customer, and field-operator stakeholders during autonomous mobile robot deployments, managing project timelines and communicating technical status and blockers
+  - Develop and test robot software features and internal data-pipeline tooling (Python, Bash, Linux), including automating the BIM/CAD processing pipeline to streamline robot path generation
+  - Diagnose robot failures via telemetry, sensor data, and logs, and troubleshoot issues on-site to maintain deployment uptime
   - Manage and train a team of 5 operators, leading onboarding, technical development, and conflict resolution
 - **Capstone Design Project: Haptic Wristband with Tactile and Squeeze Feedback** (August 2024 - July 2025) - **Rice University** (Houston, TX)
   - Awarded 1st-Place Student Project Worldwide (ISCAS 2025) and a Work-in-Progress publication (World Haptics Conference 2025)
@@ -59,7 +60,7 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 ### Technical Skills
 - **Primary:** SolidWorks (CAD/FEA), Creo, Rapid Prototyping (3D Printer, CNC, Lathe, Laser Cutter), DFM/DFA, GD&T
 - **Secondary:** PCB Design (KiCAD, EAGLE), ESP32, Arduino, BeagleBoard, Signal Processing, Circuit Design
-- **Domain:** Product design (concept-to-prototype), mechatronics, robotics operations
+- **Domain:** Product design (concept-to-prototype), mechatronics, robotics operations, technical/cross-functional project coordination, robot software development & testing
 - **Software:** Python, C++, Linux (Bash), MATLAB, Git; familiar with Unity, C#, Java
 
 ### Certifications
@@ -94,6 +95,8 @@ None currently.
 - Product design / industrial design consultancies: Pump Studios (ideal-fit example)
 - Mechatronics / robotics hardware companies
 - Medical robotics / assistive technology (haptics, VR/AR, prosthetics-adjacent design)
+- Technical/robotics project management and program coordination roles (broadened 2026-09-08: current role is substantively PM/stakeholder-coordination plus robot software dev and testing, not pure mechanical design)
+- Robotics software or test/QA engineering roles
 
 ### Deal-breakers
 <!-- Hard constraints on job search. Language requirements are handled separately and
@@ -101,6 +104,7 @@ automatically from your Languages table above - don't duplicate them here. -->
 - Grind culture / long-hours environments (6-day weeks, 9+ hour days, mandatory weekend work)
 - Not being within (about ~30 mins, can be more for big cities like LA or the Bay area) a livable major city - Houston is being actively left behind
 - Being placed in a role above current skill level without mentorship/support
+- Postings with a stated minimum of 2+ years of professional experience (added 2026-09-08 - entry-level only; see `job-scraper/SKILL.md`'s Experience-level override and `04-job-evaluation.md`'s Career goals)
 
 ## Repo Structure
 - Base resume: a Google Doc (never edited directly) - copied per application into a "Tailored Resumes" Drive folder. Doc URL and folder ID are recorded in `.claude/skills/job-application-assistant/05-cv-templates.md`'s `ACTIVE-GOOGLE-DOC-TEMPLATE` block.

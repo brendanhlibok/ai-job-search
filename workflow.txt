@@ -1,0 +1,35 @@
+This "Careers" folder is where I store everything including my Resume/application documents, 
+jobs I've applied to, companies I'm specifically interested in, interview prepartion, 
+brainstorming about my career, and contacts for roles. I want this to keep this as my 
+main filestore for my documents, and I want you to be able to read through documents like companies
+ I've applied to, answers I've given to application documents, etc. to help me craft future answers,
+  sense patterns in my applications, and help for other general application tasks.  
+  The first step to doing this, is that we will change the resume generator to create tailored resumes
+  based off of two "master" untouched resumes.
+
+
+  They're in my google drive under career/resumes. The two reference resumes are "Master" 
+  which is a complete encapsulation of every possible work experience that I've had, and 
+  every possible bullet that I could use under each opportunity. The second are my forks of 
+  (BASE) based on the date they're generated. This resume is my go-to for engineering/product 
+  design/robotics that I use about 90% of the time.
+
+When creating a tailored resume for a role, it will mainly consist of using the most recent fork
+ of my engineering one (BASE) and making adjustments to my skills sections and the bullet points
+  based off of the job system, highlighting keywords to match ATS system tracking. The main focus
+   here is to optimize for ATS, and for the first two experiences to catch the reader's eye. When
+    doing this, you will mainly pull information from that master resume. This includes all of my
+     skills you can pull from, and different options for bullets that you can include. You can also
+      merge or combine different bullet points when it makes sense to either reduce or improve the
+       demonstraiton of one skill set in exchange for another.
+
+Sometimes, however, I'll ask you to create an entirely new resume, using my master.
+ I'll give you a new job, and this will likely be different from the typical engineering roles I face,
+  but I do have experience in event planning, hospitality, and others that I may apply for going forward.
+   In this case, you'll likely be creating new sections for the resume, but still pulling from the experiences
+    in my master resume. I will work with you very collaboratively to do this, and we will work the resume
+     generation together. An example of this is how I have an "operations" resume. 
+
+In both of these methods you will check with me afterwards to refine the resume before it's complete, 
+and you will have to ensure that the resume is less than 1 page. 
+In this case I am giving you permission to write to these resume documents.

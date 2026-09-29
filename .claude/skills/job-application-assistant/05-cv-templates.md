@@ -7,53 +7,57 @@ framework_version: 2.0.0
 <!-- SETUP: Profile statements and section ordering are personalized by running /setup -->
 
 <!-- BEGIN ACTIVE-GOOGLE-DOC-TEMPLATE (set once during one-time setup - do not edit by hand) -->
-> **Base resume:** [Brendan_Hlibok (BASE) July 2026](https://docs.google.com/document/d/1uQ7SU1Bd5cHAylSOeuLJ7ySbPYvHAtuxumy1Iu9FhlY/edit) (ID: `1uQ7SU1Bd5cHAylSOeuLJ7ySbPYvHAtuxumy1Iu9FhlY`)
+> **Reference folder:** "career/resumes" in Google Drive (ID: `1slC1PLgcb9nHUT3pvPNhPCS9_P5LAkd7`) — holds the Master Resume, all (BASE)/(OPERATIONS)/etc. forks, and the "Tailored Resumes" output subfolder. See "ACTIVE MEDIUM" below for the current reference documents.
 > **Output folder:** "Tailored Resumes" (ID: `1SUfUep0Wp9Ki6kAsLrJk_ZAyvJQhsYv0`)
 <!-- END ACTIVE-GOOGLE-DOC-TEMPLATE -->
 
-## ACTIVE MEDIUM (as of 2026-08-11): Structured Text
+## ACTIVE MEDIUM (as of 2026-09-29): Google Docs Reference System
 
-Until a code-based Docs-templating pipeline exists (planned, not yet built — see "Future: Coded Docs Pipeline" below), CV tailoring works off **`templates/Brendan Resume Text`**, not the Google Doc directly. This exists because the available Google Drive tools can copy/create/read files but cannot edit text inside an existing Doc — the structured text file is something Claude *can* actually edit.
+Supersedes the 2026-08-11 "Structured Text" medium below (kept for history, no longer used — `templates/Brendan Resume Text` is stale and should not be read for tailoring). Google Drive access is back, and the user has clarified the real reference system that already lives there.
 
-- **`templates/Brendan Resume Text` is the master template.** Same rule as the Google Doc version: never edited directly. It's a `key: value` field mirror of the base resume (header, education, technical experience, personal projects, activities, skills), one entry per resume line.
-- **Don't confuse this with `documents/cv/Brendan Resume Text`** — that copy is `/setup`'s Path A source material for populating the profile skill files, a different purpose from CV tailoring. The two happened to be identical as of 2026-08-12; they are not kept in sync automatically.
-- **Per application, copy it** to `documents/applications/<company>_<role>/cv.txt`, then tailor *only the bullet wording and skill entries* — reframe phrasing for ATS/keyword alignment with the target posting, per the same grounding rules as everywhere else (every claim must trace to `01-candidate-profile.md` / the base resume / `CLAUDE.md`, no fabrication). Dates, titles, employers, and structure stay untouched.
-- **Recommend removals.** If a skill or bullet is low-relevance for a given posting, propose cutting it (per `05-cv-templates.md`'s existing "Relevance-weighted cutting" section below) rather than silently dropping it — the user decides.
-- **The user manually transfers the final tailored text into the actual Google Doc** for now — this workflow doesn't touch the Doc at all. `job_search_tracker.csv`'s `cv_file` column should point at the local `cv.txt` path for applications drafted under this medium, until the coded pipeline replaces it.
+### Reference documents (read-only to Claude — see "Absolute rule" below)
 
-### Future: Coded Docs Pipeline (not yet built)
-The plan is a script using the real Google Docs API (`documents.batchUpdate`, `replaceAllText`) against a tagged version of the base resume Doc (e.g. `{{EXP3_BULLET1}}` placeholders), driven by this same structured text file, so edits apply in one shot instead of manual transfer. This needs Google Cloud OAuth/service-account credentials for the Docs API specifically (the current Drive connector doesn't cover it). Not started — revisit when the user is ready to set it up.
+All live in the "career/resumes" Drive folder:
 
-## Medium: Google Docs (planned reactivation — not currently used)
+- **Master Resume** (currently `Master Resume (Sept 2026)`, ID `1JRkwXjELn-AFXpAWJgJe49g1pT-u9X-BRLXquZBtBMY`) — "a complete encapsulation of every possible work experience... and every possible bullet." Organized by category (Management Experience, Hospitality Experience, Technical Experience, Personal Projects, Activities, Skills), **not** in normal resume layout — never copy it directly as a starting point, only pull bullet/phrasing options and information from it. It contains real facts not yet mirrored in `01-candidate-profile.md` (e.g. Pub at Rice bartending, Leelynn's Dining Room hosting, the Parkinson's Disease Tremor Simulator project, the ASL Recognition Band project, TEDx Speaker, extra MD Anderson bullets) — treat these as grounded once the user confirms syncing them into the profile; until then, verify with the user before using anything from Master that isn't already in `01-candidate-profile.md` / `CLAUDE.md`.
+- **(BASE) forks** — the go-to engineering/product-design/robotics resume, used ~90% of the time. Multiple forks can exist simultaneously, named by whatever the user chooses (date, e.g. `(BASE) 2026-09-29`, or location, e.g. `Brendan_Hlibok (BASE) July 2026 - New York` for Northeast-targeted applications) — don't assume the naming convention, read what's actually there. **Always use the most recently created fork** as the tailoring starting point unless the user says otherwise.
+- **(OPERATIONS) fork** (and any future domain-specific forks — event planning, hospitality, etc.) — precedent for the "new domain" workflow below. New sections, different structure, still pulling facts from Master.
 
-CVs are Google Docs, not LaTeX/PDF. There is no compile step and no per-application document class — every tailored CV is a copy of your one real base resume, edited in place. This is different from the old LaTeX workflow in one important way: the visual template (fonts, margins, header layout, section styling) is never authored by Claude. It's whatever your base resume already looks like. Claude's job is narrower and more repeatable: copy it, then edit the words.
+### Absolute rule: references are read-only to Claude
 
-**Currently inactive** — see "ACTIVE MEDIUM" above. This section describes the target end-state once Docs API access exists (either via the coded pipeline above, or a future MCP tool that supports in-place Doc edits), and is kept here so the workflow can resume without rewriting it.
+**Never edit the Master Resume or any fork (BASE, OPERATIONS, or future ones) unless the user explicitly asks.** These are the user's own reference documents — they edit them; Claude reads from them. This holds even though the user has granted permission to write resume documents in general — that permission is scoped to *new tailored output copies* (below), not to the references. If a reference looks like it has an error (a wording drift, a stale fact), flag it to the user; do not fix it yourself.
 
-### One-Time Setup (Google Docs medium — inactive)
+### Two tailoring workflows
 
-Before the first CV can be tailored under this medium, this file needs two things recorded in the `ACTIVE-GOOGLE-DOC-TEMPLATE` block above:
+**A. Standard (~90% of the time) — engineering/product-design/robotics roles:**
+1. Copy the most recent (BASE) fork into the "Tailored Resumes" folder (or the user's chosen equivalent) via `copy_file` — this preserves all formatting.
+2. Adjust the skills section and bullets against the target posting's language, optimizing for **ATS keyword match**. The first two experience entries matter most — they're what catch the reader's eye first, so lead with the strongest, most relevant content.
+3. Pull additional bullet options or phrasing from the Master Resume when the (BASE) fork's existing wording isn't the best fit for this posting. Merging or combining bullets from Master is fine when it trades emphasis usefully (e.g. compressing two bullets into one to make room for a more relevant one).
+4. Keep it grounded: every claim still traces to `01-candidate-profile.md` / `CLAUDE.md` / the Master Resume (once synced) / the chosen (BASE) fork — no fabrication, same as always.
 
-1. **Base resume Doc URL.** Ask for the Google Doc URL of the comprehensive resume you already use as your starting point for every application (the equivalent of the old `cv/main_example.tex` "master reference" — the most complete, unedited version of your professional record). Fetch it once (Docs MCP `get_document` or equivalent) to confirm access and to learn its actual section structure — heading text, section order, whether it has a summary/objective line. Do not assume it matches the section names used elsewhere in this file; read what's actually there.
-2. **Output folder.** Confirm a Google Drive folder named **"Tailored Resumes"** exists (Drive MCP `list`/`search`, filtering to folders you own). If it doesn't exist, create it (Drive MCP `create` with the folder mimetype) and confirm the name with the user before treating it as final — folder names are visible in their Drive, unlike a `cv/` directory nobody but you ever opens.
+**B. New domain (occasional) — roles meaningfully different from the usual engineering track (event planning, hospitality, etc.):**
+1. This is **highly collaborative**, not a solo draft-and-present — work the structure through with the user rather than delivering a finished resume unprompted.
+2. Pull facts from the Master Resume's full breadth (e.g. Hospitality Experience, KODA Camp Counselor) — new sections are expected and fine.
+3. `Brendan_Hlibok (OPERATIONS) Sept 2026` is the precedent to look at for how a prior new-domain resume was structured.
 
-Write both into the managed block: the Doc URL (and ID, parsed from the URL) for the base resume, and the folder name plus ID for the output folder. (Already recorded above from the one-time setup done on 2026-08-11, even though the Google Docs medium isn't the active one — no need to redo it once Docs API access exists.)
+**Both workflows:** check with the user afterward to refine before calling it final, and the result must be **under 1 page**.
 
-**The base resume is never edited.** Every write operation targets a *copy* of it, never the original.
+### Mechanism (as of 2026-09-29: real in-place editing)
 
-### Per-Application Workflow (Google Docs medium — inactive)
+The **Google Docs** connector (separate from Google Drive — added 2026-09-29) is connected and provides real in-place Doc editing via `read_doc` / `update_doc` (`documents.batchUpdate`). Before the first edit of a session, read the `google-workspace` skill (`Skill` tool) and its `references/docs.md` in full — it covers index/revision mechanics, `replaceAllText` vs. positional edits, and the mandatory verify step. In practice:
+1. `copy_file` (Drive) the chosen reference fork into the output location — still the only step that touches a Doc other than the new tailored-output copy, and it targets that copy only, never a reference.
+2. Edit the new copy directly with `update_doc`. For a simple word/phrase swap confined to a unique span, `replaceAllText` needs no read and no indexes — the fastest path, used for both edits on the first tailored resume under this system (Mammoth Brands, 2026-09-29). For anything positional (inserting a new bullet, reordering), read the doc first with `read_doc` and follow `references/docs.md`'s index/revision-guard rules.
+3. **Verify, every time**: export to PDF (Drive `download_file_content`, `exportMimeType: application/pdf`) and read it with the Read tool to confirm exactly 1 page, correct content, and intact formatting — this is the CLAUDE.md Verification Checklist's mandatory Google Doc check, and it's cheap now that edits land directly.
+4. Report the changes made (old → new) so the user can see what happened, even though they no longer have to apply it themselves.
 
-1. **Copy.** Use the Drive API's copy operation (`files.copy` semantics) to duplicate the base resume Doc into the "Tailored Resumes" folder. Name the copy `<Company> - <Role>` (e.g. `Pendar Technologies - R&D Hardware Engineer`) — human-readable, since this folder is something you'll actually browse in Drive, unlike the old `cv/main_<company>_<role>.tex` path.
-2. **Read the copy's structure.** Fetch the new Doc's content (`get_document`) and locate its actual sections by heading text — Summary/Profile (if present), Skills/Core Competencies, Experience, Education, and so on. Confirm you're editing the right ranges before writing.
-3. **Edit in place, don't rebuild.** Use `batchUpdate` requests (`replaceAllText`, or `deleteContentRange` + `insertText` at a specific location) to swap in tailored wording *within* the existing formatted structure. Inserting text at an existing run generally inherits that run's formatting (font, bold, bullet style) automatically — this is the main advantage of editing a real formatted document instead of generating one from scratch, and it's why step 2 matters: edit inside the existing bullet/paragraph, don't delete-and-recreate it, or you risk losing the formatting that made the base resume look right in the first place.
-4. **Reordering sections is a heavier operation** (moving content ranges, not just replacing text within them) and should be avoided unless the role genuinely calls for it — prefer re-emphasizing content within the existing order first.
+This supersedes the paste-in mechanism entirely — a tailored resume is now a completed Doc, not a set of instructions for the user to carry out.
 
-### Per-Application Workflow (Structured Text medium — active)
+### Coded Docs Pipeline: not needed
+The previously-planned custom Google Cloud OAuth/service-account script is unnecessary now that the Google Docs connector provides this directly. Not building it.
 
-1. **Copy.** Copy `templates/Brendan Resume Text` to `documents/applications/<company>_<role>/cv.txt` (create the application folder if it doesn't already exist from posting/outreach archiving).
-2. **Tailor bullet wording and skill entries only.** Reframe phrasing to align with the target posting's keywords/duties for ATS matching. Dates, titles, employers, degree info, and the field structure itself stay untouched — this mirrors the "reframe emphasis, not substance" rule in `03-writing-style.md`.
-3. **Recommend, don't silently cut.** If a skill or bullet reads as low-relevance for this posting, propose removing it (see "Relevance-weighted cutting" below) and let the user decide.
-4. **Report the changes plainly** (e.g. old → new per bullet) since there's no export-and-inspect PDF loop for a plain text file — the user reviews the diff directly and transfers it into the Google Doc themselves.
+## Superseded: Structured Text medium (2026-08-11 to 2026-09-29 — no longer used)
+
+`templates/Brendan Resume Text` was the interim workaround before the Master/fork system above was known to Claude. It is now stale and should not be read for CV tailoring — the Google Docs Reference System above is authoritative. Kept only as history; do not maintain it going forward.
 
 ## Section-by-Section Tailoring
 

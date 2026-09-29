@@ -61,8 +61,8 @@ How well do the required/preferred skills align with the candidate's capabilitie
 | 0-39 | Fundamental mismatch |
 
 **Strong match areas:** Mechanical design and CAD (SolidWorks, Creo, DFM/DFA, GD&T), rapid prototyping (3D printing, CNC, laser cutting), PCB design and embedded electronics (KiCAD, EAGLE, ESP32, Arduino)
-**Moderate match areas:** Software/scripting (Python, C++, MATLAB, Linux/Bash), robotics field operations and deployment, cross-functional hardware/software/electrical integration
-**Weak match areas:** Production-volume manufacturing/DFM, formal product management, enterprise/ML software engineering
+**Moderate match areas:** Software/scripting (Python, C++, MATLAB, Linux/Bash), robotics field operations and deployment, cross-functional hardware/software/electrical integration, technical project/stakeholder coordination (Rugged Robotics is substantively a PM role, not pure hands-on engineering), robot software development and QA/field testing
+**Weak match areas:** Production-volume manufacturing/DFM, formal enterprise/ML software engineering
 
 ### 2. Experience Match (0-100)
 Does work history align with what they're looking for?
@@ -74,8 +74,8 @@ Does work history align with what they're looking for?
 | 40-59 | Adjacent experience, would need to make the case |
 | 0-39 | Unrelated experience |
 
-**Strong:** Early-stage/prototype-phase mechanical and electromechanical product design (capstone project, lab research, internship); rapid prototyping and iteration
-**Moderate:** Robotics field operations and deployment (Rugged Robotics) - transferable troubleshooting and systems-thinking, but not core product design
+**Strong:** Early-stage/prototype-phase mechanical and electromechanical product design (capstone project, lab research, internship); rapid prototyping and iteration; technical project/stakeholder coordination and team management (Rugged Robotics - this is the role's actual substance, not just a transferable adjacency); robot software development and QA/field testing (Rugged Robotics)
+**Moderate:** Formal robotics program/product management (no dedicated PM title held, but PM-shaped responsibilities in current role); software engineering in a dedicated SWE capacity (current software work is scoped to internal tooling and robot features, not a standalone engineering role)
 **Entry-level:** Full end-to-end product design ownership (concept-to-market), production-scale DFM/DFT - actively targeting junior/entry-level roles to build this
 
 ### 3. Behavioral/Culture Fit (0-100)
@@ -107,9 +107,10 @@ Does this role advance career goals and contain tasks that energize?
 | 0-39 | Dead end or backwards step |
 
 **Career goals:**
-- Become a product design engineer at a small product design firm, working the full lifecycle from early concept to a market-ready product
-- Currently building depth in product design skills and experience via junior or entry-level roles; open to stepping back from the current operations-focused role to do so
+- Broadened 2026-09-08: three viable directions, not just one. (1) Become a product design engineer at a small product design firm, working the full lifecycle from early concept to a market-ready product. (2) Technical/robotics project management or program coordination, building on the actual substance of the current Rugged Robotics role. (3) Robotics software or test/QA engineering, building on the current role's robot-software-development and field-testing work.
+- Currently building depth via junior or entry-level roles in whichever of the three directions a given posting fits; open to stepping back from the current role's title/level to do so
 - Prefers small/startup-sized companies over large corporations
+- **Entry-level only.** A posting with a stated minimum of 2+ years of professional experience is a strong negative signal regardless of which of the three directions it falls under - see `job-scraper/SKILL.md`'s Experience-level override for how this is applied during scraping. During a full `/apply` evaluation, still score honestly rather than auto-failing (the user may choose to apply anyway, as with several roles already in the tracker), but the Experience Match score should reflect the gap plainly.
 
 **Motivation filter:** Evaluate not just whether you *can* do the tasks, but whether the tasks will *energize* you. Consider:
 - Tasks that energize: Early-stage/concept-phase product development, hands-on CAD modeling, cross-disciplinary work spanning electrical and software components, learning from experienced engineers in a junior/mentee capacity

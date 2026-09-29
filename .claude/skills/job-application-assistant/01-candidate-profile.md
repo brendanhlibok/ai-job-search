@@ -16,7 +16,7 @@ framework_version: 1.1.2
 - **LinkedIn:** https://www.linkedin.com/in/brendan-hlibok-010a6023a/
 - **GitHub:** https://github.com/brendanhlibok
 - **Citizenship:** U.S. citizen
-- **Status:** Employed full-time (Robotic Operations Engineer, Rugged Robotics), actively seeking a new role in product design engineering
+- **Status:** Employed full-time (Robotic Operations Engineer, Rugged Robotics), actively seeking a new role in product design engineering, technical/robotics project management, or robotics software & test engineering
 - **Constraints:** Currently based in Houston, TX but actively looking to relocate away from it. Must live in, or within ~30 minutes by car of, a major city. Target cities: San Francisco, Seattle, New York City, Chicago, Los Angeles, Atlanta, Austin, Denver, Washington DC, Philadelphia, Boston. Prefers access to nature and/or East Coast proximity to family.
 
 ### Languages
@@ -40,9 +40,10 @@ a hard no, not a gap to smooth over. -->
 
 ### Robotic Operations Engineer - Rugged Robotics (August 2025 - Present)
 Houston, TX
-- Lead deployment of autonomous mobile robots on large-scale construction sites, coordinating customer data processing and diagnosing robot failures with root cause analysis using robot telemetry, sensor data, and robot logs to maintain uptime.
-- Automate the BIM/CAD processing pipeline in Linux by scripting data transformation tasks in Python and Bash, reducing manual processing time and streamlining robot path generation.
-- Manage and train a team of 5 operators on autonomous robot systems, leading onboarding, operator technical development, and interpersonal conflict resolution to optimize site deployment and team performance.
+- Coordinate across engineering, customer, and field-operator stakeholders during autonomous mobile robot deployments on large-scale construction sites, managing project timelines and communicating technical status and blockers.
+- Develop and test robot software features and internal data-pipeline tooling (Python, Bash, Linux), including automating the BIM/CAD processing pipeline to streamline robot path generation.
+- Diagnose robot failures via telemetry, sensor data, and logs, and troubleshoot issues on-site to maintain deployment uptime.
+- Manage and train a team of 5 operators on autonomous robot systems, leading onboarding, technical development, and interpersonal conflict resolution to optimize site deployment and team performance.
 
 ### Capstone Design Project: Haptic Wristband with Tactile and Squeeze Feedback (August 2024 - July 2025)
 Rice University, Houston, TX
