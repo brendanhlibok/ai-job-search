@@ -1,6 +1,6 @@
 # /generateresume - Tailored Resume Generator
 
-Given a job posting, tailor a resume to it and produce a finished, verified Google Doc. This command does **only** resume generation — no fit scoring/gate, no outreach message, no tracker or file-archive side effects. The job posting is provided below as `$ARGUMENTS` (either a URL or pasted text).
+Given a job posting, tailor a resume to it and produce a finished, verified Google Doc. This command does **only** resume generation — no fit scoring/gate, no outreach message, no tracker or file-archive side effects, no Notion writes. The job posting is provided below as `$ARGUMENTS` (either a URL or pasted text). Recording the application in Notion is a separate, user-triggered step — see `/appliedto`.
 
 Follow these steps **exactly in order**. Do not skip steps.
 
@@ -179,3 +179,5 @@ Summarize 3-5 key decisions: what was emphasized and why, what the reviewer sugg
 
 ### File
 Link the tailored resume's Google Doc URL. Tell the user it's ready for review.
+
+Generating a resume does **not** record anything in Notion — that happens only when the user runs `/appliedto` after actually submitting the application.

@@ -33,3 +33,20 @@ Sometimes, however, I'll ask you to create an entirely new resume, using my mast
 In both of these methods you will check with me afterwards to refine the resume before it's complete, 
 and you will have to ensure that the resume is less than 1 page. 
 In this case I am giving you permission to write to these resume documents.
+
+
+Job Search:
+I want to develop a job board that tracks all of the jobs that I've applied to in Notion.
+I want this to include a space for company, title of the job, location of the job, the link 
+to the job, and the date I applied. This is the only information I want clearly visible in the 
+database. The other information can be stored cleanly in another page, but please offer another 
+idea if you have one for how to attach data to these roles.
+I then want to create a way to track the following: contacts for the role (with information about 
+their email, linkedin, number, how I know them, and their position), how I applied to the role 
+(cold apply, referral, recruiter reached out to me, I reached out to recruiter, cold apply with 
+linkedin inmail, cold apply with email message, cold apply with connection note), and then I want
+ to include how far I've gotten in each interview.
+I also want to track how much I feel like my experience is aligned to these roles, 
+(with the option in the future to expand to more specific info in this section like 
+YOE, technical skills, soft skills, etc.). I also want to track how much I'm excited
+ for the specific role.
