@@ -1,6 +1,6 @@
 # /appliedto - Record a Submitted Application in Notion
 
-You are recording that the user has actually **submitted** an application — this command only runs after the fact, never before. The job posting is provided below as `$ARGUMENTS` (a URL, or pasted text if the user gave that instead). Read `.claude/skills/job-application-assistant/10-notion-tracker.md` in full before doing anything else, and follow its schema and shared upsert routine exactly rather than re-deriving them here.
+You are recording that the user has actually **submitted** an application — this command only runs after the fact, never before. The job posting is provided below as `$ARGUMENTS` (a URL, or pasted text if the user gave that instead). Read `.claude/skills/job-application-assistant/10-notion-tracker.md` in full before doing anything else, and follow its schema and shared create routine exactly rather than re-deriving them here.
 
 This command never touches `job_search_tracker.csv` or anything under `documents/`. It writes to Notion only.
 
@@ -15,16 +15,16 @@ This command never touches `job_search_tracker.csv` or anything under `documents
 
 ---
 
-## Step 1: Upsert the Notion Row
+## Step 1: Create the Notion Row
 
 Read `10-notion-tracker.md`'s `ACTIVE-NOTION-DATABASES` block. **If it isn't configured yet, run its "One-Time Setup" section now** (search for the user's "Careers" page, create the three databases) — this is a one-time, first-use event, not a separate command the user has to invoke.
 
-Then run the Upsert routine from `10-notion-tracker.md`. The only fields this command ever sets:
-- Company, Job title, Location, Link — from Step 0
+Then run the Create routine from `10-notion-tracker.md`. **Every run creates a new row — there is no duplicate check.** Running this twice for the same job makes two rows; that's expected, not a bug. The only fields this command ever sets:
+- Company, Position, Location, Link — from Step 0
 - Date applied: today, unless the user gives a different date
 - Status: `applied` (the implicit consequence of recording an application — not a question to the user)
 
-**Nothing else.** Application Method, Experience Alignment, and Excitement are left for the user to set directly in Notion — this command never asks about them.
+**Nothing else.** Application Method, Experience Alignment, and Excitement Level are left for the user to set directly in Notion — this command never asks about them.
 
 ---
 

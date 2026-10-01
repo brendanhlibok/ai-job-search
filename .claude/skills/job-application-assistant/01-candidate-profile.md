@@ -61,12 +61,16 @@ Houston, TX
 - Developed an automated test bench to evaluate durability over 100,000 walking cycles at a 105lb load using a cyclically powered electromagnet and control system in C++ (Arduino).
 - Accelerated prototyping of legacy lab projects, saving ~5 hours per assembly by replacing manually wired circuits with custom PCBs using KiCAD.
 
+### Lab Assistant & Inventory Coordinator - Oshman Engineering Design Kitchen, Rice University (September 2022 - May 2025)
+Houston, TX
+- Guided students in prototyping for design projects and delivered technical workshops on skills such as CNC machining, laser cutting, and 3D printing.
+- Optimized inventory systems for 100+ prototyping items in Excel to ensure timely support for project development.
+
 ## Independent Projects
 <!-- Projects outside of employment: freelance, open source, personal -->
 - **Split-Flap Display** (July 2026 - Present): Designing a 3x15 modular split-flap character display using Creo, 3D printing, and a custom PCB (KiCAD) with an ESP32 (C++) to process custom user text inputs into physical display sequences.
 
 ### Leadership & Activities
-- Engineering Design Mentor, Oshman Engineering Design Kitchen at Rice University (2022-2025)
 - President, Rice University Club Lacrosse (2023-2025)
 
 ## Technical Skills

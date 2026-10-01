@@ -45,12 +45,14 @@ Read only what you don't already have in context:
 - **Engage nice-to-haves by name** where the profile supports honest adjacency, and use the posting's own term over a synonym wherever truthfully applicable — including in section headings.
 - **Optimize for ATS keyword match, and make the first two experience entries count** — per `05-cv-templates.md`'s workflow A, those are what a reader (and often a parser) weighs first.
 
-### Editing the copy
+### Editing the copy — select, don't reword
 - In the **CV language from the profile** (the `CV language:` line in CLAUDE.md's Identity section; default English).
 - Use the real in-place editing mechanism from `05-cv-templates.md` (the Google Docs connector, `read_doc`/`update_doc`) — read the `google-workspace` skill and its `references/docs.md` before the first edit if you haven't already this session.
-- Tailor bullets and the skills section; pull additional bullet/phrasing options from the Master Resume where the fork's existing wording isn't the best fit, merging or combining bullets when it trades emphasis usefully.
-- Keep to 1 page.
-- **Grounding Audit:** before finalizing, audit all tailored bullet points against the union of `01-candidate-profile.md` + `CLAUDE.md`'s Candidate Profile section + the chosen fork's content (+ Master Resume, once confirmed) to verify zero profile drift or fabrication.
+- **Standing rule (user instruction): never alter the wording of an existing bullet.** Tailoring means choosing which bullets to include — add a bullet, delete a bullet, reorder bullets for emphasis, swap in a better-fitting bullet from the Master Resume in place of a less-relevant fork bullet — always using the bullet's exact existing text. Do not merge two bullets into a new sentence, shorten a bullet's wording, or rephrase it to use the posting's terminology. That counts as rewording even when it's a small change.
+- Skills section: reorder or select among the candidate's already-declared skill terms; don't invent new skill phrasing either.
+- **When no existing bullet (fork or Master) covers a posting requirement well, that's a gap — not something to write new text for.** Note it; it becomes a suggested text change in Step 3/Step 5 for the user to write or approve themselves.
+- Keep to 1 page by removing whole bullets (relevance-weighted cutting, see `05-cv-templates.md`) — never by shortening a bullet's wording to save a line.
+- **Grounding Audit:** before finalizing, confirm every included bullet's text is an exact, unmodified match to something in the chosen fork or the Master Resume (once confirmed) — this should be close to automatic now that nothing is reworded, but still worth a check against `01-candidate-profile.md` + `CLAUDE.md`'s Candidate Profile section for any Master content not yet synced.
 
 Any mention of agentic coding or AI tooling must reference **Claude Code** by name.
 
@@ -106,12 +108,12 @@ The draft, and the reference fork content it was tailored from, are provided inl
 
 Return your feedback in **two parts**:
 
-**Part A — Structured edits (preferred format whenever possible):**
-A JSON array of concrete edits the drafter can apply directly without re-fetching the resume Doc. Each edit is an object:
+**Part A — Structured suggestions (preferred format whenever possible):**
+A JSON array of concrete suggested text changes. **These are not edits the drafter will apply** — the user reviews and applies them by hand, or not at all. Each suggestion is an object:
 ```json
 {
   "old_string": "<exact text currently in the draft>",
-  "new_string": "<replacement text>",
+  "new_string": "<suggested replacement text>",
   "reason": "<one-line rationale: keyword match / company angle / reframing / style / grounding>"
 }
 ```
@@ -133,17 +135,17 @@ Return Part A and Part B together as a single structured message.
 
 ---
 
-## Step 3: Revise Based on Feedback
+## Step 3: Compile Suggested Wording Changes (do not apply)
 
-Once the reviewer agent returns its feedback:
+**Standing rule (user instruction): the reviewer's feedback is never applied to the Doc.** Nothing in this step edits the resume. Instead, compile everything the user would need to make the wording changes themselves:
 
-1. **Apply Part A (structured edits) directly** via the Google Docs connector's `update_doc` — `replaceAllText` for a unique string, or a positional edit per `references/docs.md` in the `google-workspace` skill. Do NOT re-fetch the resume Doc first; the reviewer's `old_string` values were quoted from the text you already have. Skip any whose rationale would require fabricating content.
-2. **Apply Part B (narrative suggestions)** using judgment:
-   - **Missed keywords/requirements:** add where it fits naturally, preferring experience bullets (concrete evidence) over any summary/profile-statement line.
-   - **Company/department-specific angles:** only if the resume format has room for company-specific framing (most resumes don't) — otherwise note it and move on, this is more useful for a future outreach message than for the resume itself.
-   - **Action-oriented reframing:** rewrite passive or generic phrasing.
-   - **Tone and style issues:** apply the writing-style-guide fixes (no em-dashes, no cliches, no apologetic hedging, consistent active voice).
-3. Do NOT incorporate any suggestion that would fabricate skills or experience. If a posting requirement is a genuine gap, leave it a gap.
+1. **Part A suggestions:** carry each `old_string`/`new_string`/`reason` forward as-is. Drop any whose rationale would require fabricating content — never pass a fabrication-risk suggestion to the user framed as safe.
+2. **Part B suggestions**, translated into the same concrete form wherever possible:
+   - **Missed keywords/requirements:** state what's missing and suggest where it would go and what text would cover it — as a gap note if no existing bullet fits, not as text you've written into the Doc.
+   - **Company/department-specific angles:** note these are more useful for a future outreach message than the resume itself; mention briefly, don't turn into a resume suggestion.
+   - **Action-oriented/passive-phrasing and tone/style issues:** only worth surfacing if they point at an existing fork/Master bullet that reads worse than an available alternative (a selection decision) — a pure wording fix is the user's call to make or skip, so list it as a suggestion rather than a change you make.
+3. Do NOT include any suggestion that would fabricate skills or experience. If a posting requirement is a genuine gap with no suggestion that stays honest, say so plainly instead.
+4. Carry this compiled list forward — it's presented to the user in Step 5, not acted on here.
 
 ---
 
@@ -172,10 +174,13 @@ Once the reviewer agent returns its feedback:
 Re-read the resume Doc's final content once here to confirm it matches your mental model after Steps 3 and 4.
 
 ### Verification Checklist
-Report pass/fail: factual accuracy (all claims traced to a grounding source, correct titles/dates/companies), targeting (bullets reframed to match requirements, nice-to-haves highlighted where genuine), consistency (this is a copy of the chosen reference fork, not a from-scratch document; the fork itself was never modified), quality (no spelling/grammar errors, Claude Code named where agentic tooling is mentioned, language matches the posting).
+Report pass/fail: factual accuracy (all claims traced to a grounding source, correct titles/dates/companies), targeting (bullets selected to match requirements, nice-to-haves highlighted where genuine), consistency (this is a copy of the chosen reference fork, not a from-scratch document; the fork itself was never modified; every bullet's wording is unmodified from its source), quality (no spelling/grammar errors, Claude Code named where agentic tooling is mentioned, language matches the posting).
 
 ### Key Tailoring Decisions
-Summarize 3-5 key decisions: what was emphasized and why, what the reviewer suggested that was most impactful, any gaps acknowledged rather than stretched.
+Summarize 3-5 key decisions: which bullets were selected/swapped/dropped and why, any gaps acknowledged rather than stretched.
+
+### Suggested Text Changes (for your review)
+Present the Step 3 compiled list here — exact current text, suggested replacement or addition, and the reason — so the user can apply whichever they want directly in the Doc. If the list is empty, say so.
 
 ### File
 Link the tailored resume's Google Doc URL. Tell the user it's ready for review.

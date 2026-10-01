@@ -31,9 +31,9 @@ All live in the "career/resumes" Drive folder:
 
 **A. Standard (~90% of the time) — engineering/product-design/robotics roles:**
 1. Copy the most recent (BASE) fork into the "Tailored Resumes" folder (or the user's chosen equivalent) via `copy_file` — this preserves all formatting.
-2. Adjust the skills section and bullets against the target posting's language, optimizing for **ATS keyword match**. The first two experience entries matter most — they're what catch the reader's eye first, so lead with the strongest, most relevant content.
-3. Pull additional bullet options or phrasing from the Master Resume when the (BASE) fork's existing wording isn't the best fit for this posting. Merging or combining bullets from Master is fine when it trades emphasis usefully (e.g. compressing two bullets into one to make room for a more relevant one).
-4. Keep it grounded: every claim still traces to `01-candidate-profile.md` / `CLAUDE.md` / the Master Resume (once synced) / the chosen (BASE) fork — no fabrication, same as always.
+2. **Select, don't reword** (standing user instruction — see `/generateresume` Step 1). Choose which bullets to keep, drop, or pull in from the Master Resume against the target posting's language, optimizing for **ATS keyword match** — every included bullet keeps its exact existing wording, verbatim from the fork or Master. The first two experience entries matter most — they're what catch the reader's eye first, so lead with the strongest, most relevant *verbatim* bullets available.
+3. Swap in a Master Resume bullet verbatim when the (BASE) fork doesn't already have the best-fitting bullet for this posting. Dropping a less-relevant fork bullet in favor of a more relevant Master one is a selection decision and always fine; combining two bullets' wording into a new sentence, or editing a bullet to use the posting's own term, is rewording and is not done here — it becomes a suggested text change presented to the user instead (see `/generateresume` Step 3/5).
+4. Keep it grounded: every claim still traces to `01-candidate-profile.md` / `CLAUDE.md` / the Master Resume (once synced) / the chosen (BASE) fork — no fabrication, same as always. Verbatim selection makes this close to automatic, but still confirm nothing drifted.
 
 **B. New domain (occasional) — roles meaningfully different from the usual engineering track (event planning, hospitality, etc.):**
 1. This is **highly collaborative**, not a solo draft-and-present — work the structure through with the user rather than delivering a finished resume unprompted.
@@ -65,6 +65,8 @@ The tactical guidance below carries over unchanged from principle to principle �
 
 ### Profile Statement / Elevator Pitch (Best Practice)
 If your base resume has one, this is the highest-value thing to customize per application: a concise, compelling 1-3 sentence introduction explaining why you're qualified for *this specific role*, focused on what the employer gains from hiring you.
+
+**Select-don't-reword applies here too.** Pick whichever existing variant below (or in Master) fits the role best and use it verbatim — don't blend two variants or edit one's wording to match the posting. If none of the existing variants fit well, that's a gap: suggest new phrasing to the user per `/generateresume` Step 3/5 rather than writing a new sentence into the Doc.
 
 When the role sits outside your home domain, **lead with the domain-transfer argument** — the sentence connecting your background to their problem belongs at the opening, not buried later. It's the strongest card a domain-changer holds; play it first.
 
